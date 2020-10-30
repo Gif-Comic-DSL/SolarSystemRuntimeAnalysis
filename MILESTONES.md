@@ -19,9 +19,9 @@ For our program analysis project, we plan to illustrate the control flow of a pr
 ### Planned follow-ups / features still to design:
 - We plan to use existing libraries to implement the visualization components, however this will still require a 
 non-trivial amount of work. Currently we are considering/investigating the below libraries for this purpose:
-https://typpo.github.io/spacekit/
-https://github.com/mrdoob/three.js/
-https://www.creative-technologies.de/space-game-visualization-engine/ (example built on three.js for reference/inspiration)
+  - https://typpo.github.io/spacekit/
+  - https://github.com/mrdoob/three.js/
+  - https://www.creative-technologies.de/space-game-visualization-engine/ (example built on three.js for reference/inspiration)
 
 - For the control flow analysis, we will need to do more research and perhaps material from the next few lectures. We would ideally use some existing debugger functionality to step through a program’s execution in discrete steps and extract the information needed for our visualization.
 

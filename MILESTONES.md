@@ -23,6 +23,7 @@ non-trivial amount of work. Currently we are considering/investigating the below
   - https://github.com/mrdoob/three.js/
   - https://www.creative-technologies.de/space-game-visualization-engine/ (example built on three.js for reference/inspiration)
 
-- For the control flow analysis, we will need to do more research and perhaps material from the next few lectures. We would ideally use some existing debugger functionality to step through a program’s execution in discrete steps and extract the information needed for our visualization.
-
+- For the control flow analysis, we will need to do more research and perhaps material from the next few lectures. Some ideas we have so far are:
+    - We could use some existing debugger functionality to step through a program’s execution in discrete steps and extract the information needed for our visualization.
+    - We could use an existing library to build an AST of the program and then render the spaceship at the currently executing planet when that node is visited. Since we'll most likely need to use JS for the visualization, the image will rerender each time the spaceship's location changes so this will make it appear to be moving. We can modify this to make the movement smoother to simulate flying
 

@@ -17,7 +17,12 @@ For our program analysis project, we plan to illustrate the control flow of a pr
 - It would be a good idea to add something about what approach you are planning to follow in the milestone as a follow-up point. 
 
 ### Planned follow-ups / features still to design:
-- We're planning to analyze a Java program and know that we'll be using an existing library to build the AST.
-- Beyond this, we haven't decided exactly what the implementation breakdown will look like yet
-- This will be fleshed out next week when we meet to decide how to move forward and which parts each of us will be responsible for
+- We plan to use existing libraries to implement the visualization components, however this will still require a 
+non-trivial amount of work. Currently we are considering/investigating the below libraries for this purpose:
+https://typpo.github.io/spacekit/
+https://github.com/mrdoob/three.js/
+https://www.creative-technologies.de/space-game-visualization-engine/ (example built on three.js for reference/inspiration)
+
+- For the control flow analysis, we will need to do more research and perhaps material from the next few lectures. We would ideally use some existing debugger functionality to step through a program’s execution in discrete steps and extract the information needed for our visualization.
+
 

@@ -1,5 +1,29 @@
 Add entries to this file summarising each project milestone. Don't forget that these need to have been discussed with your TA before the milestone deadline; also, remember to commit and push them by then!
 
+# MILESTONE 2
+
+## RoadMap
+- finalize plan for dynamic analysis implementation by November 11th, define subtasks and create issues
+- user study 1 by Nov 13
+- visualization library tests working by Nov 13
+- Nov 20th: output from dynamic analysis up and running
+- Nov 27th: have everything connected together and working
+- Nov 29th: finalized video
+
+## Division of Responsiblities
+- Astro: in charge of JS and front end bits, will ask for help with subtasks as needed
+- Ravina: Generating AST (and maybe modifying if needed?)
+- Alex: Figuring out how to connect java dynamic analysis to JS visualization, passing info. Help with breaking dynamic analysis into substasks
+- Abraham: Help with AST
+- Jen: Dynamic analysis parts (to get ball rolling but will have help once we can break down subtasks)
+
+## Progress so far
+- Roadmap done
+- some design aspects figured out and we have specific quesitons re dynamic analysis that we're working on asap
+- libraries for visualization component have been identified and investigated
+
+
+
 # MILESTONE 1
 ## Project: Space Adventure Dynamic Analysis
 

@@ -11,11 +11,11 @@ Add entries to this file summarising each project milestone. Don't forget that t
 - Nov 29th: finalized video
 
 ## Division of Responsiblities
-- Astro: in charge of JS and front end bits, will ask for help with subtasks as needed
-- Ravina: Generating AST (and maybe modifying if needed?)
-- Alex: Figuring out how to connect java dynamic analysis to JS visualization, passing info. Help with breaking dynamic analysis into substasks
-- Abraham: Help with AST
-- Jen: Dynamic analysis parts (to get ball rolling but will have help once we can break down subtasks)
+- Ravina: Generating AST
+- Jen: Dynamic analysis (modifying AST before parsing it, running AST)
+- Abraham: Passing text/JSON output of dynamic analysis to react for visualization
+- Astro and Alex: JS and front end bits, displaying info from dynamic analysis
+
 
 ## Progress so far
 - Roadmap done

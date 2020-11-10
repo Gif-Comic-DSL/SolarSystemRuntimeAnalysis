@@ -1,16 +1,20 @@
 package src;
 
+import com.sun.source.tree.CompilationUnitTree;
+import com.sun.source.util.JavacTask;
 import com.sun.source.util.Trees;
 import javax.tools.JavaCompiler;
 import javax.tools.JavaFileObject;
 import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ASTConverter {
 
-    public static Trees getAST(List<File> fileList) {
+    public static Iterable<? extends CompilationUnitTree> getAST(List<File> fileList) {
+        // Option 1: Javac
         //Get java compiler
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 
@@ -19,13 +23,20 @@ public class ASTConverter {
 
         Iterable<? extends JavaFileObject> compilationUnits = fileManager.getJavaFileObjectsFromFiles(fileList);
 
-        // Create compilation task
-        JavaCompiler.CompilationTask task = compiler.getTask(null, fileManager, null,
+        // Create compilation task and cast to JavacTask
+        JavacTask task = (JavacTask) compiler.getTask(null, fileManager, null,
                 null, null, compilationUnits);
 
         final Trees trees = Trees.instance(task);
-        // trees.getTree needs element --> how to generate element?
 
-        return trees;
+        try {
+            Iterable<? extends CompilationUnitTree> asts = (Iterable<? extends CompilationUnitTree>) task.parse();
+            task.analyze();
+            return asts;
+        } catch (Exception e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+
+        return null;
     }
 }

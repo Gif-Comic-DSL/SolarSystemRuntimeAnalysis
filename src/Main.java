@@ -1,9 +1,9 @@
 package src;
 
+import com.sun.source.tree.CompilationUnitTree;
 import com.sun.source.tree.Tree;
 import com.sun.source.util.TreeScanner;
 import com.sun.source.util.Trees;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,19 +12,21 @@ public class Main {
     public static void main(String[] args) {
         List<File> fileList = getFileList();
 
-        Trees trees = ASTConverter.getAST(fileList);
-//        visit trees --> Trees has no visit method, Tree does. How to split Trees into its individual tree components
-//        and visit each with ASTVisitor?
+        Iterable<? extends CompilationUnitTree> asts = ASTConverter.getAST(fileList);
 
-//        ASTVisitor visitor = new ASTVisitor();
-//        visitor.visit(trees, null); // this does not work
-        System.out.println(trees);
+        for (CompilationUnitTree ast : asts) {
+            System.out.println("In AST loop");
+            System.out.println(ast);
+
+            Tree astTree = (Tree) ast;
+            System.out.println("class below");
+            System.out.println(ast.getClass().getSimpleName());
+            astTree.accept(new ASTVisitor(), null);
+
+        }
     }
 
-
-    // Get the list of java file objects, in this case we have only one file, TestClass.java
-    // to get the AST of an entire program, add each file to this list?
-    // is there a way to get all the file names without hardcoding like below?
+    // TODO: Get all the file names without hardcoding file names
     private static List<File> getFileList() {
         List<File> fileList = new ArrayList<>();
         File file = new File("src/test.java");

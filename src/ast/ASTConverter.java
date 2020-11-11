@@ -1,4 +1,4 @@
-package src;
+package ast;
 
 import com.sun.source.tree.CompilationUnitTree;
 import com.sun.source.util.JavacTask;
@@ -8,7 +8,6 @@ import javax.tools.JavaFileObject;
 import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ASTConverter {

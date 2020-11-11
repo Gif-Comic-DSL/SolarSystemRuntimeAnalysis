@@ -1,4 +1,4 @@
-package src;
+package ast;
 
 import com.sun.source.tree.ClassTree;
 import com.sun.source.util.SimpleTreeVisitor;

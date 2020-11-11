@@ -1,5 +1,8 @@
+package src;
+
 import com.sun.source.tree.CompilationUnitTree;
 import com.sun.source.tree.Tree;
+import src.ast.ASTVisitor;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -18,7 +21,7 @@ public class Main {
             Tree astTree = (Tree) ast;
             System.out.println("class below");
             System.out.println(ast.getClass().getSimpleName());
-            astTree.accept(new ast.ASTVisitor(), null);
+            astTree.accept(new ASTVisitor(), null);
 
         }
     }

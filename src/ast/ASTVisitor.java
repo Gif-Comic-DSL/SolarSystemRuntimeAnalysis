@@ -1,6 +1,7 @@
-package ast;
+package src.ast;
 
 import com.sun.source.tree.ClassTree;
+import com.sun.source.tree.MethodTree;
 import com.sun.source.util.SimpleTreeVisitor;
 
 import javax.lang.model.element.Name;
@@ -11,9 +12,17 @@ public class ASTVisitor extends SimpleTreeVisitor {
         super();
     }
 
-    public Name visitClass(ClassTree node, String x) {
-        this.visitClass(node, x);
-        System.out.println("Node is: " + node);
-        return node.getSimpleName();
+    @Override
+    public Object visitClass(ClassTree node, Object o) {
+        System.out.println(node.getSimpleName());
+        return super.visitClass(node, o);
+    }
+
+    @Override
+    public Object visitMethod(MethodTree node, Object o) {
+        System.out.println(node.getModifiers());
+        System.out.println(node.getName());
+        System.out.println(node.getParameters());
+        return super.visitMethod(node, o);
     }
 }

@@ -15,13 +15,10 @@ public class Main {
         Iterable<? extends CompilationUnitTree> asts = ast.ASTConverter.getAST(fileList);
 
         for (CompilationUnitTree ast : asts) {
-            System.out.println("In AST loop");
-            System.out.println(ast);
+//            System.out.println("In AST loop");
+//            System.out.println(ast);
 
-            Tree astTree = (Tree) ast;
-            System.out.println("class below");
-            System.out.println(ast.getClass().getSimpleName());
-            astTree.accept(new ASTVisitor(), null);
+            ast.accept(new ASTVisitor(), null);
 
         }
     }

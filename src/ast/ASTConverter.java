@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ASTConverter {
 
-    public static Iterable<? extends CompilationUnitTree> getAST(List<File> fileList) {
+    public static JavacTask getAST(List<File> fileList) {
         //Get java compiler
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 
@@ -25,7 +25,7 @@ public class ASTConverter {
                 null, null, compilationUnits);
 
         try {
-            return task.parse();
+            return task;
         } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());
         }

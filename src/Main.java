@@ -15,7 +15,13 @@ public class Main {
         List<File> fileList = getFileList("src/input", new ArrayList<>());
 
         // each file in fileList is a class file, therefore each ast in asts is a class declaration
-        Iterable<? extends CompilationUnitTree> asts = ASTConverter.getAST(fileList);
+        Iterable<? extends CompilationUnitTree> asts = null;
+        try {
+            asts = ASTConverter.getAST(fileList).parse();
+        } catch (Exception e) {
+            System.out.println("EXception thrown");
+        }
+
 
         if (asts != null) {
             for (CompilationUnitTree ast : asts) {

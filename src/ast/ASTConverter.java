@@ -1,8 +1,7 @@
-package ast;
+package src.ast;
 
 import com.sun.source.tree.CompilationUnitTree;
 import com.sun.source.util.JavacTask;
-import com.sun.source.util.Trees;
 import javax.tools.JavaCompiler;
 import javax.tools.JavaFileObject;
 import javax.tools.StandardJavaFileManager;
@@ -13,7 +12,6 @@ import java.util.List;
 public class ASTConverter {
 
     public static Iterable<? extends CompilationUnitTree> getAST(List<File> fileList) {
-        // Option 1: Javac
         //Get java compiler
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 
@@ -26,12 +24,8 @@ public class ASTConverter {
         JavacTask task = (JavacTask) compiler.getTask(null, fileManager, null,
                 null, null, compilationUnits);
 
-        final Trees trees = Trees.instance(task);
-
         try {
-            Iterable<? extends CompilationUnitTree> asts = (Iterable<? extends CompilationUnitTree>) task.parse();
-            task.analyze();
-            return asts;
+            return task.parse();
         } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());
         }

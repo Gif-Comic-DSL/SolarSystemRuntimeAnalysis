@@ -1,7 +1,9 @@
 package src;
 
+import com.sun.source.tree.ClassTree;
 import com.sun.source.tree.CompilationUnitTree;
 import com.sun.source.tree.Tree;
+import src.ast.ASTConverter;
 import src.ast.ASTVisitor;
 
 import java.io.File;
@@ -10,24 +12,47 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<File> fileList = getFileList();
+        List<File> fileList = getFileList("src/input", new ArrayList<>());
 
-        Iterable<? extends CompilationUnitTree> asts = ast.ASTConverter.getAST(fileList);
+        // each file in fileList is a class file, therefore each ast in asts is a class declaration
+        Iterable<? extends CompilationUnitTree> asts = ASTConverter.getAST(fileList);
 
-        for (CompilationUnitTree ast : asts) {
-//            System.out.println("In AST loop");
-//            System.out.println(ast);
+        if (asts != null) {
+            for (CompilationUnitTree ast : asts) {
+                List<ClassTree> typeDeclList = (List<ClassTree>) ast.getTypeDecls();
 
-            ast.accept(new ASTVisitor(), null);
+                if (typeDeclList != null && typeDeclList.isEmpty()) {
+                    for (ClassTree typeDecl: typeDeclList) {
+                        typeDecl.accept(new ASTVisitor(), null); // class has been accepted
 
+                        List<Tree> membersList = (List<Tree>) typeDecl.getMembers();
+
+                        for (Tree member: membersList) {
+                            member.accept(new ASTVisitor(), null); // accepts methods and variables
+                        }
+                    }
+                }
+            }
         }
+
     }
 
-    // TODO: Get all the file names without hardcoding file names
-    private static List<File> getFileList() {
-        List<File> fileList = new ArrayList<>();
-        File file = new File("src/ast/test.java");
-        fileList.add(file);
+    /*
+    Method to retrieve list of files given directory
+     */
+    private static List<File> getFileList(String directory, List<File> fileList) {
+        File dirFile = new File(directory);
+        File[] fileArray = dirFile.listFiles();
+
+        if (fileList != null) {
+            for (File file : fileArray) {
+                if (file.isFile()) {
+                    fileList.add(file);
+                } else if (file.isDirectory()) {
+                    getFileList(file.getPath(), fileList);
+                }
+            }
+        }
 
         return fileList;
     }

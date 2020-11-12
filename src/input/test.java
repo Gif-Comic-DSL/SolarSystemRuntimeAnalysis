@@ -1,4 +1,4 @@
-package ast;
+package src.input;
 
 public class test {
     private int x;

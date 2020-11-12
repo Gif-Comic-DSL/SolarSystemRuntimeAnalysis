@@ -19,9 +19,10 @@ public class Main {
 
         if (asts != null) {
             for (CompilationUnitTree ast : asts) {
+                System.out.println("IN FIRST FOR");
                 List<ClassTree> typeDeclList = (List<ClassTree>) ast.getTypeDecls();
 
-                if (typeDeclList != null && typeDeclList.isEmpty()) {
+                if (typeDeclList != null || typeDeclList.isEmpty()) {
                     for (ClassTree typeDecl: typeDeclList) {
                         typeDecl.accept(new ASTVisitor(), null); // class has been accepted
 

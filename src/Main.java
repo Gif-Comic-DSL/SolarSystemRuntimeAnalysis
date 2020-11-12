@@ -19,7 +19,6 @@ public class Main {
 
         if (asts != null) {
             for (CompilationUnitTree ast : asts) {
-                System.out.println("IN FIRST FOR");
                 List<ClassTree> typeDeclList = (List<ClassTree>) ast.getTypeDecls();
 
                 if (typeDeclList != null || typeDeclList.isEmpty()) {

@@ -1,0 +1,7 @@
+Notes from first user study:
+- show method calls as spaceship moves instead of just flying around
+- make the spaceship's movement follow the structure of a sequence diagram more closely so it's easier to understand
+
+Changes planned:
+- add method names to dynamic logging and display the name as the spaceship flies between planets
+- show method calls and returns in addition to movement between instances of classes

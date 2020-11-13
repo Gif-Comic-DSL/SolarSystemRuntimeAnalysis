@@ -1,5 +1,11 @@
 Add entries to this file summarising each project milestone. Don't forget that these need to have been discussed with your TA before the milestone deadline; also, remember to commit and push them by then!
 
+# MILESTONE 3
+
+- user study 1 results and planned changes are listed in user-study-1.txt
+- the mockup we used for the user study currently consists of paper sketches and verbal descriptions of how the spaceship would move
+- we are working on building a digital version of the mockup as we get the visualization components of our project up and running
+
 # MILESTONE 2
 
 ## RoadMap
@@ -34,6 +40,9 @@ For our program analysis project, we plan to illustrate the control flow of a pr
 - Control flow will be visualized using a spaceship, which will travel between the planets
 - Exceptions and errors can be modelled using blackholes or explosions
 - Relationships between classes will be represented by shooting star lines
+
+### Use Case:
+- beginning/young programmers can use our visualization to better understand the control flow of their Java programs as they watch the spaceship trace the execution path of method calls between instances of classes
 
 ### Feedback from TA:
 - How much would you be implementing as opposed to using existing libraries?

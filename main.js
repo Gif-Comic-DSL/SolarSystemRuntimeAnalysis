@@ -1,11 +1,9 @@
-// import TWEEN from '@tweenjs/tween.js';
-var pointLight, sun, moon, earth, mars, rocket, earthOrbit, marsOrbit, ring, ring2, controls, scene, camera, renderer, scene, tween;
+import { CSS2DRenderer, CSS2DObject } from './js/CSS2DRenderer.js';
+var labelRenderer, pointLight, sun, earth, mars, rocket, earthOrbit, marsOrbit, controls, scene, camera, renderer, scene, tween;
 var planetSegments = 48;
 var earthData = constructPlanetData(365.2564, 0.015, 25, "earth", "img/earth.jpg", 1, planetSegments);
 
 var marsData = constructPlanetData(265.2564, 0.015, 50, "mars", "img/mars.jpg", 1, planetSegments);
-
-var moonData = constructPlanetData(29.5, 0.01, 2.8, "moon", "img/moon.jpg", 0.5, planetSegments);
 var orbitData = {value: 200, runOrbit: true, runRotation: true};
 var clock = new THREE.Clock();
 var loader = new THREE.ObjectLoader();
@@ -55,28 +53,6 @@ function getRing(size, innerDiameter, facets, myColor, name, distanceFromAxis) {
     return myRing;
 }
 
-/**
- * Used to create a three dimensional ring. This takes more processing power to 
- * run that getRing(). So use this sparingly, such as for the outermost ring of
- * Saturn.
- * @param {type} size decimal
- * @param {type} innerDiameter decimal
- * @param {type} facets integer
- * @param {type} myColor HTML color
- * @param {type} name string
- * @param {type} distanceFromAxis decimal
- * @returns {THREE.Mesh|myRing}
- */
-function getTube(size, innerDiameter, facets, myColor, name, distanceFromAxis) {
-    var ringGeometry = new THREE.TorusGeometry(size, innerDiameter, facets, facets);
-    var ringMaterial = new THREE.MeshBasicMaterial({color: myColor, side: THREE.DoubleSide});
-    myRing = new THREE.Mesh(ringGeometry, ringMaterial);
-    myRing.name = name;
-    myRing.position.set(distanceFromAxis, 0, 0);
-    myRing.rotation.x = Math.PI / 2;
-    scene.add(myRing);
-    return myRing;
-}
 
 /**
  * Simplifies the creation of materials used for visible objects.
@@ -171,8 +147,36 @@ function loadTexturedPlanet(myData, x, y, z, myMaterialType) {
     myPlanet.name = myData.name;
     scene.add(myPlanet);
     myPlanet.position.set(x, y, z);
+    loadText(myPlanet, "HELOLOLO");
 
     return myPlanet;
+}
+
+/**
+ * A test function to load the text.
+ * @param {type} object object to attach the text on
+ * @param {type} text the text to be displayed
+ * @returns {THREE.PointLight|getPointLight.light}
+ */
+function loadText(object, text) {
+    const Div = document.createElement( 'div' );
+    Div.className = 'label';
+    Div.textContent = text;
+    Div.style.color = "white";
+    Div.style.marginTop = '-1em';
+    const Label = new CSS2DObject( Div );
+    Label.position.set( 0, 1, 0 );
+    object.add( Label );
+
+    labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize( window.innerWidth, window.innerHeight );
+    labelRenderer.domElement.style.position = 'absolute';
+    labelRenderer.domElement.style.top = '10px';
+    document.body.appendChild( labelRenderer.domElement );
+
+    const controls = new THREE.OrbitControls( camera, labelRenderer.domElement );
+    controls.minDistance = 5;
+    controls.maxDistance = 100;
 }
 
 /**
@@ -212,23 +216,6 @@ function movePlanet(myPlanet, myData, myTime, stopRotation) {
                 * myData.distanceFromAxis;
     }
 }
-
-/**
- * Move the moon around its orbit with the planet, and rotate it.
- * @param {type} myMoon
- * @param {type} myPlanet
- * @param {type} myData
- * @param {type} myTime
- * @returns {undefined}
- */
-function moveMoon(myMoon, myPlanet, myData, myTime) {
-    movePlanet(myMoon, myData, myTime);
-    if (orbitData.runOrbit) {
-        myMoon.position.x = myMoon.position.x + myPlanet.position.x;
-        myMoon.position.z = myMoon.position.z + myPlanet.position.z;
-    }
-}
-
 /**
  * A testing function for moving space ship from planet1 to planet2
  */
@@ -242,6 +229,7 @@ function moveSpaceShip(rocket, planet1, planet2) {
     tween.to(planet2.position, 1000);
     tween.start();
 
+    loadText(rocket, "TESTTTTOUTT")
 }
 
 /**
@@ -267,19 +255,18 @@ function update(renderer, scene, camera, controls) {
 
     var time = Date.now();
 
+    // Starting orbiting the planets
     // movePlanet(mars, marsData, time);
     // movePlanet(earth, earthData, time);
-    // movePlanet(ring2, marsData, time, true);
 
-    // movePlanet(ring, earthData, time, true);
-    // moveMoon(moon, earth, moonData, time);
-
+    // Starting flying the space ship
     moveSpaceShip(rocket, earth, mars);
 
     renderer.render(scene, camera);
+    labelRenderer.render( scene, camera );
     requestAnimationFrame(function () {
         update(renderer, scene, camera, controls);
-        TWEEN.update()
+        TWEEN.update();
     });
 }
 
@@ -356,14 +343,10 @@ async function init() {
 
     // Create the Earth, the Moon, and a ring around the earth.
     earth = loadTexturedPlanet(earthData, earthData.distanceFromAxis, 0, 0);
-    moon = loadTexturedPlanet(moonData, moonData.distanceFromAxis, 0, 0);
     mars = loadTexturedPlanet(marsData, marsData.distanceFromAxis, 0 ,0);
-    ring = getTube(1.8, 0.05, 480, 0x757064, "ring", earthData.distanceFromAxis);
-    ring2 = getTube(1.8, 0.05, 480, 0x757064, "ring2", marsData.distanceFromAxis);
 
-     // Import the spaceship model
+    // Import the spaceship model
     rocket = await modelLoader('spaceshipModel/spaceship.json');
-    console.log("loaded??", rocket);
     // loader.load('spaceshipModel/spaceship.json', handleLoad);
     rocket.traverse( function ( child ) {
 

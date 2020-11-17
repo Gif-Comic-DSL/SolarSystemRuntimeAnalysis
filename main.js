@@ -161,7 +161,14 @@ function loadText(object, text) {
     Div.style.marginTop = '-1em';
     const Label = new CSS2DObject( Div );
     Label.position.set( 0, 1, 0 );
-    object.add( Label );
+    
+    // remove the previous labels to avoid overlapping
+    for(var i = 0; i < object.children.length; i++) {
+        if(object.children[i] instanceof CSS2DObject) {
+            object.remove(object.children[i]);
+        }
+    }
+    object.add(Label);
 
     labelRenderer = new CSS2DRenderer();
     labelRenderer.setSize( window.innerWidth, window.innerHeight );
@@ -216,15 +223,24 @@ function movePlanet(myPlanet, myData, myTime, stopRotation) {
  */
 function moveUFO(ufo) {
 
-    loadText(ufo, "function1");
+    loadText(ufo, "function 1");
     var tween1 = new TWEEN.Tween(ufo.position).to(earth.position, 3000).onComplete(function () {
-        loadText(ufo, "function2");
+        loadText(ufo, "function 2");
     });
     var tween2 = new TWEEN.Tween(ufo.position).to(mars.position, 3000).onComplete(function () {
-        console.log("called2");
+        loadText(ufo, "function 3");
+    });;
+    var tween3 = new TWEEN.Tween(ufo.position).to(earth.position, 3000).onComplete(function () {
+        loadText(ufo, "function 4");
+    });;
+
+    var tween4 = new TWEEN.Tween(ufo.position).to(sun.position, 3000).onComplete(function () {
+        console.log("finished");
     });;
 
     tween1.chain(tween2);
+    tween2.chain(tween3);
+    tween3.chain(tween4);
     tween1.start();
 }
 

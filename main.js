@@ -3,7 +3,7 @@ var labelRenderer, pointLight, sun, earth, mars, ufo, earthOrbit, marsOrbit, con
 var planetSegments = 48;
 var earthData = constructPlanetData(365.2564, 0.015, 25, "earth", "img/earth.jpg", 1, planetSegments);
 
-var marsData = constructPlanetData(265.2564, 0.015, 50, "mars", "img/mars.jpg", 1, planetSegments);
+var marsData = constructPlanetData(305.2564, 0.015, 40, "mars", "img/mars.jpg", 1, planetSegments);
 var orbitData = {value: 200, runOrbit: true, runRotation: true};
 var clock = new THREE.Clock();
 var loader = new THREE.ObjectLoader();

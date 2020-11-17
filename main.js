@@ -1,11 +1,9 @@
-// import TWEEN from '@tweenjs/tween.js';
-var pointLight, sun, moon, earth, mars, rocket, earthOrbit, marsOrbit, ring, ring2, controls, scene, camera, renderer, scene, tween;
+import { CSS2DRenderer, CSS2DObject } from './js/CSS2DRenderer.js';
+var labelRenderer, pointLight, sun, earth, mars, ufo, earthOrbit, marsOrbit, controls, scene, camera, renderer, scene, tween;
 var planetSegments = 48;
 var earthData = constructPlanetData(365.2564, 0.015, 25, "earth", "img/earth.jpg", 1, planetSegments);
 
 var marsData = constructPlanetData(265.2564, 0.015, 50, "mars", "img/mars.jpg", 1, planetSegments);
-
-var moonData = constructPlanetData(29.5, 0.01, 2.8, "moon", "img/moon.jpg", 0.5, planetSegments);
 var orbitData = {value: 200, runOrbit: true, runRotation: true};
 var clock = new THREE.Clock();
 var loader = new THREE.ObjectLoader();
@@ -55,28 +53,6 @@ function getRing(size, innerDiameter, facets, myColor, name, distanceFromAxis) {
     return myRing;
 }
 
-/**
- * Used to create a three dimensional ring. This takes more processing power to 
- * run that getRing(). So use this sparingly, such as for the outermost ring of
- * Saturn.
- * @param {type} size decimal
- * @param {type} innerDiameter decimal
- * @param {type} facets integer
- * @param {type} myColor HTML color
- * @param {type} name string
- * @param {type} distanceFromAxis decimal
- * @returns {THREE.Mesh|myRing}
- */
-function getTube(size, innerDiameter, facets, myColor, name, distanceFromAxis) {
-    var ringGeometry = new THREE.TorusGeometry(size, innerDiameter, facets, facets);
-    var ringMaterial = new THREE.MeshBasicMaterial({color: myColor, side: THREE.DoubleSide});
-    myRing = new THREE.Mesh(ringGeometry, ringMaterial);
-    myRing.name = name;
-    myRing.position.set(distanceFromAxis, 0, 0);
-    myRing.rotation.x = Math.PI / 2;
-    scene.add(myRing);
-    return myRing;
-}
 
 /**
  * Simplifies the creation of materials used for visible objects.
@@ -151,19 +127,14 @@ function getSphere(material, size, segments) {
  * @param {type} myMaterialType string that is passed to getMaterial()
  * @returns {getSphere.obj|THREE.Mesh|loadTexturedPlanet.myPlanet}
  */
-function loadTexturedPlanet(myData, x, y, z, myMaterialType) {
+function loadTexturedPlanet(myData, x, y, z, text) {
     var myMaterial;
     var passThisTexture;
 
     if (myData.texture && myData.texture !== "") {
         passThisTexture = new THREE.ImageUtils.loadTexture(myData.texture);
     }
-    if (myMaterialType) {
-        myMaterial = getMaterial(myMaterialType, "rgb(255, 255, 255 )", passThisTexture);
-    } else {
-        myMaterial = getMaterial("lambert", "rgb(255, 255, 255 )", passThisTexture);
-    }
-
+    myMaterial = getMaterial("lambert", "rgb(255, 255, 255 )", passThisTexture);
     myMaterial.receiveShadow = true;
     myMaterial.castShadow = true;
     var myPlanet = getSphere(myMaterial, myData.size, myData.segments);
@@ -171,8 +142,43 @@ function loadTexturedPlanet(myData, x, y, z, myMaterialType) {
     myPlanet.name = myData.name;
     scene.add(myPlanet);
     myPlanet.position.set(x, y, z);
+    loadText(myPlanet, text);
 
     return myPlanet;
+}
+
+/**
+ * A test function to load the text.
+ * @param {type} object object to attach the text on
+ * @param {type} text the text to be displayed
+ * @returns {THREE.PointLight|getPointLight.light}
+ */
+function loadText(object, text) {
+    const Div = document.createElement( 'div' );
+    Div.className = 'label';
+    Div.textContent = text;
+    Div.style.color = "white";
+    Div.style.marginTop = '-1em';
+    const Label = new CSS2DObject( Div );
+    Label.position.set( 0, 1, 0 );
+    
+    // remove the previous labels to avoid overlapping
+    for(var i = 0; i < object.children.length; i++) {
+        if(object.children[i] instanceof CSS2DObject) {
+            object.remove(object.children[i]);
+        }
+    }
+    object.add(Label);
+
+    labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize( window.innerWidth, window.innerHeight );
+    labelRenderer.domElement.style.position = 'absolute';
+    labelRenderer.domElement.style.top = '10px';
+    document.body.appendChild( labelRenderer.domElement );
+
+    const controls = new THREE.OrbitControls( camera, labelRenderer.domElement );
+    controls.minDistance = 5;
+    controls.maxDistance = 100;
 }
 
 /**
@@ -212,37 +218,32 @@ function movePlanet(myPlanet, myData, myTime, stopRotation) {
                 * myData.distanceFromAxis;
     }
 }
-
-/**
- * Move the moon around its orbit with the planet, and rotate it.
- * @param {type} myMoon
- * @param {type} myPlanet
- * @param {type} myData
- * @param {type} myTime
- * @returns {undefined}
- */
-function moveMoon(myMoon, myPlanet, myData, myTime) {
-    movePlanet(myMoon, myData, myTime);
-    if (orbitData.runOrbit) {
-        myMoon.position.x = myMoon.position.x + myPlanet.position.x;
-        myMoon.position.z = myMoon.position.z + myPlanet.position.z;
-    }
-}
-
 /**
  * A testing function for moving space ship from planet1 to planet2
  */
-function moveSpaceShip(rocket, planet1, planet2) {
-    //TODO: implement this
-    // var direction = new THREE.Vector3(0.1, 0, 0);
-    // rocket.position.add(direction);
+function moveUFO(ufo) {
 
-    tween = new TWEEN.Tween(rocket.position)
-    tween.to(planet1.position, 1000);
-    tween.to(planet2.position, 1000);
-    tween.start();
+    loadText(ufo, "function 1");
+    var tween1 = new TWEEN.Tween(ufo.position).to(earth.position, 3000).onComplete(function () {
+        loadText(ufo, "function 2");
+    });
+    var tween2 = new TWEEN.Tween(ufo.position).to(mars.position, 3000).onComplete(function () {
+        loadText(ufo, "function 3");
+    });;
+    var tween3 = new TWEEN.Tween(ufo.position).to(earth.position, 3000).onComplete(function () {
+        loadText(ufo, "function 4");
+    });;
 
+    var tween4 = new TWEEN.Tween(ufo.position).to(sun.position, 3000).onComplete(function () {
+        console.log("finished");
+    });;
+
+    tween1.chain(tween2);
+    tween2.chain(tween3);
+    tween3.chain(tween4);
+    tween1.start();
 }
+
 
 /**
  * A testing function to load the model
@@ -267,20 +268,17 @@ function update(renderer, scene, camera, controls) {
 
     var time = Date.now();
 
-    // movePlanet(mars, marsData, time);
-    // movePlanet(earth, earthData, time);
-    // movePlanet(ring2, marsData, time, true);
-
-    // movePlanet(ring, earthData, time, true);
-    // moveMoon(moon, earth, moonData, time);
-
-    moveSpaceShip(rocket, earth, mars);
+    // Starting orbiting the planets
+    movePlanet(mars, marsData, time);
+    movePlanet(earth, earthData, time);
 
     renderer.render(scene, camera);
+    labelRenderer.render( scene, camera );
     requestAnimationFrame(function () {
         update(renderer, scene, camera, controls);
-        TWEEN.update()
+        TWEEN.update();
     });
+    
 }
 
 /**
@@ -338,7 +336,7 @@ async function init() {
 
     // Create the sun.
     var sunMaterial = getMaterial("basic", "rgb(255, 255, 255)");
-    sun = getSphere(sunMaterial, 16, 48);
+    sun = getSphere(sunMaterial, 13, 48);
     scene.add(sun);
 
     // Create the glow of the sun.
@@ -355,31 +353,12 @@ async function init() {
     sun.add(sprite); // This centers the glow at the sun.
 
     // Create the Earth, the Moon, and a ring around the earth.
-    earth = loadTexturedPlanet(earthData, earthData.distanceFromAxis, 0, 0);
-    moon = loadTexturedPlanet(moonData, moonData.distanceFromAxis, 0, 0);
-    mars = loadTexturedPlanet(marsData, marsData.distanceFromAxis, 0 ,0);
-    ring = getTube(1.8, 0.05, 480, 0x757064, "ring", earthData.distanceFromAxis);
-    ring2 = getTube(1.8, 0.05, 480, 0x757064, "ring2", marsData.distanceFromAxis);
+    earth = loadTexturedPlanet(earthData, earthData.distanceFromAxis, 0, 0, "class1");
+    mars = loadTexturedPlanet(marsData, marsData.distanceFromAxis, 0, 0, "class2");
 
-     // Import the spaceship model
-    rocket = await modelLoader('spaceshipModel/spaceship.json');
-    console.log("loaded??", rocket);
-    // loader.load('spaceshipModel/spaceship.json', handleLoad);
-    rocket.traverse( function ( child ) {
-
-        if ( child instanceof THREE.Mesh ) {
-
-            // child.position.x = 5000;
-            // child.position.y = -60;
-            // child.position.z = -50;
-            child.rotation.z = 0;
-        }
-
-    });
-    rocket.scale.set( 0.5, 0.5, 0.5 );
-    scene.add(rocket);
-
-
+    // Import the ufo model
+    ufo = await modelLoader('ufo/ufo.json');
+    scene.add(ufo);
 
     // Create the visible orbit that the Earth uses.
     createVisibleOrbits();
@@ -394,6 +373,7 @@ async function init() {
     folder2.add(orbitData, 'runRotation', 0, 1);
 
     // Start the animation.
+    moveUFO(ufo);
     update(renderer, scene, camera, controls);
 }
 

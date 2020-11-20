@@ -1,5 +1,46 @@
 Add entries to this file summarising each project milestone. Don't forget that these need to have been discussed with your TA before the milestone deadline; also, remember to commit and push them by then!
 
+# MILESTONE 4
+Status of Implementation:
+- VISUALIZATION (using three.js and tween.js libraries)
+    - We have a “default” image of a solar system with planets orbiting and a spaceship flying between them
+    - basic space background (done) 
+    - planets model (done) 
+    - spaceship model (done)
+    - planets orbiting (done)
+    - spaceship traveling between two points (done)
+    - working on creating planets iteratively based on input file
+    - adding planet explosions for when an exception is thrown 
+- DYNAMIC ANALYSIS (using core Java and writing a plugin)
+    - AST generation (done)
+        - We have a basic visitor that can traverse and read info from the AST
+    - AST modification (to add logging of runtime information) - IN PROGRESS
+        - We're planning to write a plugin to add runtime logging statements and then do an offline analysis
+        - This tutorial is very helpful: https://www.baeldung.com/java-build-compiler-plugin
+        - We're meeting tomorrow (Sat Nov 21) to discuss this further and keep the implementation phase moving along
+    - AST evaluation (during which details of interest will be logged to json file) - IN PROGRESS
+        - We’re learning how to run a given AST before making any modifications to it
+    - mock up the json data (done)
+        - we'll need to log the object ID, class name and method name for every method call made/returned from
+        - JSON file will contain this info and pass it to the front end to be visualized
+- INTEGRATE ANALYSIS INTO VISUALIZATION AND PERFORM THE OFFLINE ANALYSIS (TODO)
+    - pass JSON file to front end to be visualized
+        - Iteratively create planets according to the json objects (IN PROGRESS)
+        - display the class name above the planets (done)
+        - spaceship travels through the planets in order listed in JSON file (done - with mock data)
+        - display the function name/return during the spaceship flight (done)
+
+Plans for final user study:
+- We're planning to have the project fully implemented by Nov 27, then we'll perform the user study and compile our results
+
+Planned timeline for remaining days:
+- Nov 21: group meeting regarding plugin implementation
+- Nov 25: dynamic analysis finished, JSON file ready for front end
+- Nov 27: project fully implemented
+- Nov 27/28: final user study and compiled results
+- Nov 29: finalized video ready to submit
+- Nov 30, 9:00am: project due
+
 # MILESTONE 3
 
 - user study 1 results and planned changes are listed in user-study-1.txt

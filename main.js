@@ -1,18 +1,14 @@
 import { CSS2DRenderer, CSS2DObject } from './js/CSS2DRenderer.js';
-var labelRenderer, pointLight, sun, earth, mars, ufo, earthOrbit, marsOrbit, controls, scene, camera, renderer, scene,  tween;
+var labelRenderer, pointLight, sun, ufo, controls, scene, camera, renderer, scene;
 var planetSegments = 48;
-var earthData = constructPlanetData(365.2564, 0.015, 25, "earth", "img/earth.jpg", 1, planetSegments);
-
-var marsData = constructPlanetData(345.2564, 0.015, 40, "mars", "img/mars.jpg", 1, planetSegments);
 var orbitData = {value: 200, runOrbit: true, runRotation: true};
-var clock = new THREE.Clock();
 var loader = new THREE.ObjectLoader();
-
-// Get the planets: 
-var arrayOfClasses;
 
 // A function to get the current position for a planet data
 function getCurrentPosition(pData, loadedPlanets){
+    if(pData.class == "main"){
+        return sun.position;     
+    }
     var position = "";
     loadedPlanets.forEach(function(planet) {
         if(getName(pData) == planet.name) {
@@ -385,6 +381,8 @@ async function init() {
     var ambientLight = new THREE.AmbientLight(0xaaaaaa);
     scene.add(ambientLight);
 
+    // Read in the JSON data;
+    var arrayOfClasses;
     await fetch("./input/input.json").then(response => response.json().then(data => arrayOfClasses = data));
 
     // Create the sun.
@@ -416,6 +414,7 @@ async function init() {
     // Construct the planet data for each of object
     arrayOfClasses.forEach(function(object) {
         if(!hasBeingDisplayed(arrayOfPlanetDatas, object)){
+            if(object.class == "main") return;
             var p = constructPlanetData(orbitRate, rotationRate, distanceFromAxis, getName(object), getTextureUrl(textureKey), size, planetSegments);
             arrayOfPlanetDatas.push(p);
             orbitRate += 10;

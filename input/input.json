@@ -50,4 +50,8 @@
     "id": 1,
     "class": "class1",
     "method": "bbbbbb"
+},{
+    "id": 0,
+    "class": "main",
+    "method": "return main"
 }]

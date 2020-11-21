@@ -1,5 +1,5 @@
 import { CSS2DRenderer, CSS2DObject } from './js/CSS2DRenderer.js';
-var labelRenderer, pointLight, sun, earth, mars, ufo, earthOrbit, marsOrbit, controls, scene, camera, renderer, scene, tween;
+var labelRenderer, pointLight, sun, earth, mars, ufo, earthOrbit, marsOrbit, controls, scene, camera, renderer, scene,  tween;
 var planetSegments = 48;
 var earthData = constructPlanetData(365.2564, 0.015, 25, "earth", "img/earth.jpg", 1, planetSegments);
 
@@ -32,6 +32,11 @@ function getPlanetsData(planet, arrayOfPlanetDatas){
         }
     })
     return pData;
+}
+
+// A function to get the url for the planet map for Three.js texture use
+function getTextureUrl(textureKey){
+    return "textures/" + textureKey + ".jpg";
 }
 
 // A function to get the text display that combines object id and class name like "className:id"
@@ -312,14 +317,11 @@ function update(renderer, scene, camera, controls, loadedPlanets, arrayOfPlanetD
     controls.update();
 
     var time = Date.now();
+
+    // Starting orbiting the planets
     loadedPlanets.forEach(function(p) {
         movePlanet(p, getPlanetsData(p, arrayOfPlanetDatas), time);
     })
-
-
-    // Starting orbiting the planets
-    // movePlanet(mars, marsData, time);
-    // movePlanet(earth, earthData, time);
 
     renderer.render(scene, camera);
     labelRenderer.render( scene, camera );
@@ -408,18 +410,22 @@ async function init() {
     var orbitRate = 365.2564;
     var rotationRate = 0.015;
     var distanceFromAxis = 25;
-    // the texture should be changed each time
-    var texture = "img/earth.jpg";
+    var textureKey = 1;
     var size = 1;
 
     // Construct the planet data for each of object
     arrayOfClasses.forEach(function(object) {
         if(!hasBeingDisplayed(arrayOfPlanetDatas, object)){
-            var p = constructPlanetData(orbitRate, rotationRate, distanceFromAxis, getName(object), "img/earth.jpg", size, planetSegments);
+            var p = constructPlanetData(orbitRate, rotationRate, distanceFromAxis, getName(object), getTextureUrl(textureKey), size, planetSegments);
             arrayOfPlanetDatas.push(p);
             orbitRate += 10;
             rotationRate += 0.001;
             distanceFromAxis += 5;
+            if(textureKey > 9) {
+                textureKey = 1;
+            } else {
+                textureKey += 1;
+            }
         }
     });
 

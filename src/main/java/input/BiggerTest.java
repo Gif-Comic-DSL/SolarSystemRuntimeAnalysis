@@ -1,6 +1,4 @@
-package src.input;
-
-import src.input.test;
+package input;
 
 public class BiggerTest {
     private String nameOfTest = "FAKE_TEST";

@@ -1,6 +1,8 @@
 package ast;
 
-import com.sun.source.tree.*;
+import com.sun.source.tree.ClassTree;
+import com.sun.source.tree.MethodTree;
+import com.sun.source.tree.VariableTree;
 import com.sun.source.util.SimpleTreeVisitor;
 
 public class ASTVisitor extends SimpleTreeVisitor {
@@ -9,15 +11,15 @@ public class ASTVisitor extends SimpleTreeVisitor {
         super();
     }
 
-    @Override
-    public Object visitPackage(PackageTree node, Object o) {
-        System.out.println("\n");
-        System.out.println("FOUND A PACKAGE");
-
-        System.out.println(node.getPackageName());
-
-        return super.visitPackage(node, o);
-    }
+//    @Override
+//    public Object visitPackage(PackageTree node, Object o) {
+//        System.out.println("\n");
+//        System.out.println("FOUND A PACKAGE");
+//
+//        System.out.println(node.getPackageName());
+//
+//        return super.visitPackage(node, o);
+//    }
 
     @Override
     public Object visitClass(ClassTree node, Object o) {

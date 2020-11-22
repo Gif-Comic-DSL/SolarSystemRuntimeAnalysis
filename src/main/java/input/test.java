@@ -1,4 +1,4 @@
-package src.input;
+package input;
 
 public class test {
     private int x;

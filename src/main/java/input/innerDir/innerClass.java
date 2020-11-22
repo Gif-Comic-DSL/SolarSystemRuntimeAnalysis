@@ -1,4 +1,4 @@
-package src.input.innerDir;
+package input.innerDir;
 
 public class innerClass {
     private int x;

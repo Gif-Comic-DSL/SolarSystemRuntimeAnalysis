@@ -1,14 +1,104 @@
 import { CSS2DRenderer, CSS2DObject } from './js/CSS2DRenderer.js';
-var labelRenderer, pointLight, sun, earth, mars, ufo, earthOrbit, marsOrbit, controls, scene, camera, renderer, scene, tween;
+var labelRenderer, pointLight, sun, ufo, controls, scene, camera, renderer, scene;
 var planetSegments = 48;
-var earthData = constructPlanetData(365.2564, 0.015, 25, "earth", "img/earth.jpg", 1, planetSegments);
-
-var marsData = constructPlanetData(265.2564, 0.015, 50, "mars", "img/mars.jpg", 1, planetSegments);
 var orbitData = {value: 200, runOrbit: true, runRotation: true};
-var clock = new THREE.Clock();
 var loader = new THREE.ObjectLoader();
+var uniforms;
+
+// A function to get the current position for a planet data
+function getCurrentPosition(pData, loadedPlanets){
+    if(pData.class == "main"){
+        return sun.position;     
+    }
+    var position = "";
+    loadedPlanets.forEach(function(planet) {
+        if(getName(pData) == planet.name) {
+            position = planet.position;
+        }
+    })
+    return position;
+}
 
 
+// A function to get the planet data
+function getPlanetsData(planet, arrayOfPlanetDatas){
+    var pData = "";
+    arrayOfPlanetDatas.forEach(function(data) {
+        if(data.name == planet.name) {
+            pData = data;
+        }
+    })
+    return pData;
+}
+
+// A function to get the url for the planet map for Three.js texture use
+function getTextureUrl(textureKey){
+    return "textures/" + textureKey + ".jpg";
+}
+
+// A function to get the text display that combines object id and class name like "className:id"
+function getName(object){
+    var combined = object.class + ":" + object.id;
+    return combined;
+}
+
+// A function to see has this object id being displayed as a planet already
+function hasBeingDisplayed(planets, object){
+    var displayed = false;
+    if(planets == null) return displayed;
+    planets.forEach(function(p) {
+        if(p.name == getName(object)){
+            displayed = true;
+        }
+    })
+    return displayed;
+}
+
+// This funciton causes the sun to explode and stop the ufo 
+function explode(tween) {
+
+    uniforms = {
+        time: { type: "f", value: 0.0 }
+    };
+
+    var SunGeometry = sun.geometry;
+
+    var explodeModifier = new THREE.ExplodeModifier();
+    explodeModifier.modify(SunGeometry);
+    var numFaces = SunGeometry.faces.length;
+    SunGeometry = new THREE.BufferGeometry().fromGeometry( SunGeometry );
+    var colors = new Float32Array( numFaces * 3 * 3 );
+    var displacement = new Float32Array( numFaces * 3 * 3 );
+    var color = new THREE.Color();
+
+    for ( var f = 0; f < numFaces; f ++ ) {
+        var index = 9 * f;
+        var h = 1.2 * Math.random();
+        var s = 1.5 + 0.5 * Math.random();
+        var l = 1.5 + 0.5 * Math.random();
+        color.setHSL( h, s, l );
+        var x = Math.random()*10;
+        var y = Math.random()*10;
+        var z = Math.random()*10;
+        for ( var i = 0; i < 3; i ++ ) {
+            displacement[ index + ( 3 * i )     ] = x;
+            displacement[ index + ( 3 * i ) + 1 ] = y;
+            displacement[ index + ( 3 * i ) + 2 ] = z;
+        }
+    }
+    SunGeometry.addAttribute( 'customColor', new THREE.BufferAttribute( colors, 3 ) );
+	SunGeometry.addAttribute( 'displacement', new THREE.BufferAttribute( displacement, 3 ) );
+
+    var shaderMaterial = new THREE.ShaderMaterial( {
+        uniforms:       uniforms,
+        vertexShader:   document.getElementById( 'vertexshader' ).textContent,
+        fragmentShader: document.getElementById( 'fragmentshader' ).textContent
+    });
+
+    var mesh = new THREE.Mesh( SunGeometry, shaderMaterial );
+    scene.add( mesh );
+    tween.stop();
+}
 /**
  * This eliminates the redundance of having to type property names for a planet object.
  * @param {type} myOrbitRate decimal
@@ -82,25 +172,20 @@ function getMaterial(type, color, myTexture) {
 }
 
 /**
- *  Draws all of the orbits to be shown in the scene.
+ * Draws all of the orbits to be shown in the scene.
+ * @param {type} planetsData array of data for planets
  * @returns {undefined}
  */
-function createVisibleOrbits() {
+function createVisibleOrbits(planetsData) {
     var orbitWidth = 0.01;
-    earthOrbit = getRing(earthData.distanceFromAxis + orbitWidth
-        , earthData.distanceFromAxis - orbitWidth
-        , 320
-        , 0xffffff
-        , "earthOrbit"
-        , 0);
-
-    marsOrbit = getRing(marsData.distanceFromAxis + orbitWidth
-        , marsData.distanceFromAxis - orbitWidth
-        , 320
-        , 0xffffff
-        , "marsOrbit"
-        , 0);
-    
+    planetsData.forEach(function(p) {
+        getRing(p.distanceFromAxis + orbitWidth
+            , p.distanceFromAxis - orbitWidth
+            , 320
+            , 0xffffff
+            , p.name
+            , 0);
+    });
 }
 
 /**
@@ -219,34 +304,50 @@ function movePlanet(myPlanet, myData, myTime, stopRotation) {
     }
 }
 /**
- * A testing function for moving space ship from planet1 to planet2
+ * A function for moving ufo according to the order in the json data
  */
-function moveUFO(ufo) {
+function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
 
-    loadText(ufo, "function 1");
-    var tween1 = new TWEEN.Tween(ufo.position).to(earth.position, 3000).onComplete(function () {
-        loadText(ufo, "function 2");
+    var firstTween;
+    var newTween;
+    var oldTween;
+
+    
+    loadText(ufo, arrayOfClasses[0].method);
+    arrayOfClasses.forEach(function(object, index) {
+        if(oldTween == null) {
+            firstTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 3000).onComplete(function () {
+                    loadText(ufo, arrayOfClasses[index+1].method);
+                    // Caught an exception
+                    if(arrayOfClasses[index+1].method.toLowerCase().indexOf("exception") != -1) {
+                        explode(firstTween);
+                    }
+            });
+            oldTween = firstTween;
+        } else {
+            newTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 3000).onComplete(function () {
+                if(index + 1 == arrayOfClasses.length) return;
+                loadText(ufo, arrayOfClasses[index+1].method);
+                // Caught an exception
+                if(arrayOfClasses[index+1].method.toLowerCase().indexOf("exception") != -1) {
+                    explode(firstTween);
+                }
+            });
+            oldTween.chain(newTween);
+            oldTween = newTween;
+        }
     });
-    var tween2 = new TWEEN.Tween(ufo.position).to(mars.position, 3000).onComplete(function () {
-        loadText(ufo, "function 3");
-    });;
-    var tween3 = new TWEEN.Tween(ufo.position).to(earth.position, 3000).onComplete(function () {
-        loadText(ufo, "function 4");
-    });;
 
-    var tween4 = new TWEEN.Tween(ufo.position).to(sun.position, 3000).onComplete(function () {
+    var finalTween = new TWEEN.Tween(ufo.position).to(sun.position, 3000).onComplete(function () {
         console.log("finished");
-    });;
-
-    tween1.chain(tween2);
-    tween2.chain(tween3);
-    tween3.chain(tween4);
-    tween1.start();
+    });
+    oldTween.chain(finalTween);
+    firstTween.start();
 }
 
 
 /**
- * A testing function to load the model
+ * This function loads the model
  */
 function modelLoader(url) {
     return new Promise((resolve, reject) => {
@@ -262,20 +363,25 @@ function modelLoader(url) {
  * @param {type} controls
  * @returns {undefined}
  */
-function update(renderer, scene, camera, controls) {
+function update(renderer, scene, camera, controls, loadedPlanets, arrayOfPlanetDatas) {
     pointLight.position.copy(sun.position);
     controls.update();
-
     var time = Date.now();
 
+    // This line will be activated when explosion happens
+    if(uniforms){
+        uniforms.time.value = 1.0 + Math.sin(time * 0.0005); //time % interval / interval;
+    }
+
     // Starting orbiting the planets
-    movePlanet(mars, marsData, time);
-    movePlanet(earth, earthData, time);
+    loadedPlanets.forEach(function(p) {
+        movePlanet(p, getPlanetsData(p, arrayOfPlanetDatas), time);
+    })
 
     renderer.render(scene, camera);
     labelRenderer.render( scene, camera );
     requestAnimationFrame(function () {
-        update(renderer, scene, camera, controls);
+        update(renderer, scene, camera, controls, loadedPlanets, arrayOfPlanetDatas);
         TWEEN.update();
     });
     
@@ -334,6 +440,10 @@ async function init() {
     var ambientLight = new THREE.AmbientLight(0xaaaaaa);
     scene.add(ambientLight);
 
+    // Read in the JSON data;
+    var arrayOfClasses;
+    await fetch("./input/input.json").then(response => response.json().then(data => arrayOfClasses = data));
+
     // Create the sun.
     var sunMaterial = getMaterial("basic", "rgb(255, 255, 255)");
     sun = getSphere(sunMaterial, 13, 48);
@@ -352,29 +462,50 @@ async function init() {
     sprite.scale.set(70, 70, 1.0);
     sun.add(sprite); // This centers the glow at the sun.
 
-    // Create the Earth, the Moon, and a ring around the earth.
-    earth = loadTexturedPlanet(earthData, earthData.distanceFromAxis, 0, 0, "class1");
-    mars = loadTexturedPlanet(marsData, marsData.distanceFromAxis, 0, 0, "class2");
+    // Iteratevely create the planets 
+    var arrayOfPlanetDatas = [];
+    var orbitRate = 365.2564;
+    var rotationRate = 0.015;
+    var distanceFromAxis = 25;
+    var textureKey = 1;
+    var size = 1;
+
+    // Construct the planet data for each of object
+    arrayOfClasses.forEach(function(object) {
+        if(!hasBeingDisplayed(arrayOfPlanetDatas, object)){
+            if(object.class == "main") return;
+            var p = constructPlanetData(orbitRate, rotationRate, distanceFromAxis, getName(object), getTextureUrl(textureKey), size, planetSegments);
+            arrayOfPlanetDatas.push(p);
+            orbitRate += 10;
+            rotationRate += 0.001;
+            distanceFromAxis += 5;
+            if(textureKey > 9) {
+                textureKey = 1;
+            } else {
+                textureKey += 1;
+            }
+        }
+    });
+
+
+    var loadedPlanets = [];
+    // Load the planets
+    arrayOfPlanetDatas.forEach(function(p) {
+        // load the texture for the planet
+        var tempP = loadTexturedPlanet(p, p.distanceFromAxis, 0, 0, p.name);
+        loadedPlanets.push(tempP);
+    })
 
     // Import the ufo model
     ufo = await modelLoader('ufo/ufo.json');
     scene.add(ufo);
 
     // Create the visible orbit that the Earth uses.
-    createVisibleOrbits();
-
-    // Create the GUI that displays controls.
-    var gui = new dat.GUI();
-    var folder1 = gui.addFolder('light');
-    folder1.add(pointLight, 'intensity', 0, 10);
-    var folder2 = gui.addFolder('speed');
-    folder2.add(orbitData, 'value', 0, 500);
-    folder2.add(orbitData, 'runOrbit', 0, 1);
-    folder2.add(orbitData, 'runRotation', 0, 1);
+    createVisibleOrbits(arrayOfPlanetDatas);
 
     // Start the animation.
-    moveUFO(ufo);
-    update(renderer, scene, camera, controls);
+    moveUFO(ufo, arrayOfClasses, loadedPlanets);
+    update(renderer, scene, camera, controls, loadedPlanets, arrayOfPlanetDatas);
 }
 
 // Start everything.

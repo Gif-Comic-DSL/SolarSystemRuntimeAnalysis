@@ -3,6 +3,7 @@ var labelRenderer, pointLight, sun, ufo, controls, scene, camera, renderer, scen
 var planetSegments = 48;
 var orbitData = {value: 200, runOrbit: true, runRotation: true};
 var loader = new THREE.ObjectLoader();
+var uniforms;
 
 // A function to get the current position for a planet data
 function getCurrentPosition(pData, loadedPlanets){
@@ -51,6 +52,52 @@ function hasBeingDisplayed(planets, object){
         }
     })
     return displayed;
+}
+
+// This funciton causes the sun to explode and stop the ufo 
+function explode(tween) {
+
+    uniforms = {
+        time: { type: "f", value: 0.0 }
+    };
+
+    var SunGeometry = sun.geometry;
+
+    var explodeModifier = new THREE.ExplodeModifier();
+    explodeModifier.modify(SunGeometry);
+    var numFaces = SunGeometry.faces.length;
+    SunGeometry = new THREE.BufferGeometry().fromGeometry( SunGeometry );
+    var colors = new Float32Array( numFaces * 3 * 3 );
+    var displacement = new Float32Array( numFaces * 3 * 3 );
+    var color = new THREE.Color();
+
+    for ( var f = 0; f < numFaces; f ++ ) {
+        var index = 9 * f;
+        var h = 1.2 * Math.random();
+        var s = 1.5 + 0.5 * Math.random();
+        var l = 1.5 + 0.5 * Math.random();
+        color.setHSL( h, s, l );
+        var x = Math.random()*10;
+        var y = Math.random()*10;
+        var z = Math.random()*10;
+        for ( var i = 0; i < 3; i ++ ) {
+            displacement[ index + ( 3 * i )     ] = x;
+            displacement[ index + ( 3 * i ) + 1 ] = y;
+            displacement[ index + ( 3 * i ) + 2 ] = z;
+        }
+    }
+    SunGeometry.addAttribute( 'customColor', new THREE.BufferAttribute( colors, 3 ) );
+	SunGeometry.addAttribute( 'displacement', new THREE.BufferAttribute( displacement, 3 ) );
+
+    var shaderMaterial = new THREE.ShaderMaterial( {
+        uniforms:       uniforms,
+        vertexShader:   document.getElementById( 'vertexshader' ).textContent,
+        fragmentShader: document.getElementById( 'fragmentshader' ).textContent
+    });
+
+    var mesh = new THREE.Mesh( SunGeometry, shaderMaterial );
+    scene.add( mesh );
+    tween.stop();
 }
 /**
  * This eliminates the redundance of having to type property names for a planet object.
@@ -257,7 +304,7 @@ function movePlanet(myPlanet, myData, myTime, stopRotation) {
     }
 }
 /**
- * A testing function for moving space ship from planet1 to planet2
+ * A function for moving ufo according to the order in the json data
  */
 function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
 
@@ -271,12 +318,20 @@ function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
         if(oldTween == null) {
             firstTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 3000).onComplete(function () {
                     loadText(ufo, arrayOfClasses[index+1].method);
+                    // Caught an exception
+                    if(arrayOfClasses[index+1].method.toLowerCase().indexOf("exception") != -1) {
+                        explode(firstTween);
+                    }
             });
             oldTween = firstTween;
         } else {
             newTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 3000).onComplete(function () {
                 if(index + 1 == arrayOfClasses.length) return;
                 loadText(ufo, arrayOfClasses[index+1].method);
+                // Caught an exception
+                if(arrayOfClasses[index+1].method.toLowerCase().indexOf("exception") != -1) {
+                    explode(firstTween);
+                }
             });
             oldTween.chain(newTween);
             oldTween = newTween;
@@ -292,7 +347,7 @@ function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
 
 
 /**
- * A testing function to load the model
+ * This function loads the model
  */
 function modelLoader(url) {
     return new Promise((resolve, reject) => {
@@ -311,8 +366,12 @@ function modelLoader(url) {
 function update(renderer, scene, camera, controls, loadedPlanets, arrayOfPlanetDatas) {
     pointLight.position.copy(sun.position);
     controls.update();
-
     var time = Date.now();
+
+    // This line will be activated when explosion happens
+    if(uniforms){
+        uniforms.time.value = 1.0 + Math.sin(time * 0.0005); //time % interval / interval;
+    }
 
     // Starting orbiting the planets
     loadedPlanets.forEach(function(p) {

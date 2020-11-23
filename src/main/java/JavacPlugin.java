@@ -1,16 +1,14 @@
 import com.sun.source.tree.ClassTree;
 import com.sun.source.tree.MethodTree;
-import com.sun.source.tree.VariableTree;
 import com.sun.source.util.*;
 import com.sun.tools.javac.api.BasicJavacTask;
 import com.sun.tools.javac.tree.JCTree;
 import com.sun.tools.javac.tree.TreeMaker;
 import com.sun.tools.javac.util.Context;
-import com.sun.tools.javac.util.List;
 import com.sun.tools.javac.util.Log;
+import com.sun.tools.javac.util.Name;
+import com.sun.tools.javac.util.Names;
 
-import javax.crypto.spec.PSource;
-import javax.lang.model.element.Name;
 
 public class JavacPlugin implements Plugin{
 
@@ -20,15 +18,25 @@ public class JavacPlugin implements Plugin{
 
     private void addLog(MethodTree method, Context context) {
         TreeMaker factory = TreeMaker.instance(context);
+        Names names = Names.instance(context);
+        factory.at(((JCTree) method).pos); // set factory at method's position in the tree
+
+        // create the names used to access the method
+        Name n_system = names.fromString("System");
+        Name n_out = names.fromString("out.println");
+
+        // create identifier for system
+        JCTree.JCIdent i_system = factory.Ident(n_system);
+
+        // select the class and method call using the identifier and name?
+        JCTree.JCFieldAccess log_select = factory.Select(i_system, n_out);
+
+        // create the literal to be passed as the parameter to the method call
         JCTree.JCLiteral log_str = factory.Literal("please let this print");
-        System.out.println("asdf");
-        JCTree.JCExpression systemExp = factory.Select(names.from);
+
         JCTree.JCMethodInvocation log_exp = factory.Apply(
-                com.sun.tools.javac.util.List.nil(),
-                factory.Select(
-                        systemExp,
-                        names.fromString("out.println")
-                ),
+                com.sun.tools.javac.util.List.nil(), // might need to provide some type args?
+                log_select,
                 com.sun.tools.javac.util.List.of(log_str)
         );
         JCTree.JCStatement log_statement = factory.Call(log_exp);
@@ -59,14 +67,14 @@ public class JavacPlugin implements Plugin{
                             @Override
                             public Void visitClass(ClassTree classNode, Void aVoid)
                             {
-                                return super.visitClass(node, aVoid);
+                                return super.visitClass(classNode, aVoid);
                             }
 
                             @Override
                             public Void visitMethod(MethodTree methodNode, Void aVoid)
                             {
                                 addLog(methodNode, context);
-                                return super.visitMethod(node, aVoid);
+                                return super.visitMethod(methodNode, aVoid);
                             }
                         },
                         null);

@@ -8,6 +8,8 @@ For example:
 
 Definitely a tricky thing that once you add thje `-cp` option `javac` stops looking in the current directory for classes!
 
+To then run the modified compiled program:
+`java -cp ./modified_out ui.Main`
 
 ## Building/Compiling
 

@@ -238,15 +238,18 @@ function loadTexturedPlanet(myData, x, y, z, text) {
  * @param {type} text the text to be displayed
  * @returns {THREE.PointLight|getPointLight.light}
  */
-function loadText(object, text) {
+function loadText(object, text, higher) {
     const Div = document.createElement( 'div' );
     Div.className = 'label';
     Div.textContent = text;
     Div.style.color = "white";
     Div.style.marginTop = '-1em';
     const Label = new CSS2DObject( Div );
-    Label.position.set( 0, 1, 0 );
-    
+    if(higher){
+        Label.position.set( 0, 3, 0 );
+    } else {
+        Label.position.set( 0, 1, 0 );
+    }    
     // remove the previous labels to avoid overlapping
     for(var i = 0; i < object.children.length; i++) {
         if(object.children[i] instanceof CSS2DObject) {
@@ -311,13 +314,13 @@ function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
     var firstTween;
     var newTween;
     var oldTween;
-
+    var higher = true;
     
-    loadText(ufo, arrayOfClasses[0].method);
+    loadText(ufo, arrayOfClasses[0].method, higher);
     arrayOfClasses.forEach(function(object, index) {
         if(oldTween == null) {
-            firstTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 3000).onComplete(function () {
-                    loadText(ufo, arrayOfClasses[index+1].method);
+            firstTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 2000).onComplete(function () {
+                    loadText(ufo, arrayOfClasses[index+1].method, higher);
                     // Caught an exception
                     if(arrayOfClasses[index+1].method.toLowerCase().indexOf("exception") != -1) {
                         explode(firstTween);
@@ -325,9 +328,9 @@ function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
             });
             oldTween = firstTween;
         } else {
-            newTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 3000).onComplete(function () {
+            newTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 2000).onComplete(function () {
                 if(index + 1 == arrayOfClasses.length) return;
-                loadText(ufo, arrayOfClasses[index+1].method);
+                loadText(ufo, arrayOfClasses[index+1].method, higher);
                 // Caught an exception
                 if(arrayOfClasses[index+1].method.toLowerCase().indexOf("exception") != -1) {
                     explode(firstTween);
@@ -442,7 +445,7 @@ async function init() {
 
     // Read in the JSON data;
     var arrayOfClasses;
-    await fetch("./input/input.json").then(response => response.json().then(data => arrayOfClasses = data));
+    await fetch("./input/project1.json").then(response => response.json().then(data => arrayOfClasses = data));
 
     // Create the sun.
     var sunMaterial = getMaterial("basic", "rgb(255, 255, 255)");
@@ -468,7 +471,7 @@ async function init() {
     var rotationRate = 0.015;
     var distanceFromAxis = 25;
     var textureKey = 1;
-    var size = 1;
+    var size = 1.5;
 
     // Construct the planet data for each of object
     arrayOfClasses.forEach(function(object) {

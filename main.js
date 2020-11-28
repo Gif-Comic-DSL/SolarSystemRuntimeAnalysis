@@ -445,7 +445,9 @@ async function init() {
 
     // Read in the JSON data;
     var arrayOfClasses;
-    await fetch("./input/project1.json").then(response => response.json().then(data => arrayOfClasses = data));
+    await fetch("./input/project1.txt").then(response => response.json().then(data => arrayOfClasses = data));
+
+    // await fetch("./input/project1.json").then(response => response.json().then(data => arrayOfClasses = data));
 
     // Create the sun.
     var sunMaterial = getMaterial("basic", "rgb(255, 255, 255)");
@@ -482,7 +484,7 @@ async function init() {
             orbitRate += 10;
             rotationRate += 0.001;
             distanceFromAxis += 5;
-            if(textureKey > 9) {
+            if(textureKey >= 9) {
                 textureKey = 1;
             } else {
                 textureKey += 1;

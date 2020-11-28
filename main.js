@@ -99,17 +99,8 @@ function explode(tween) {
     scene.add( mesh );
     tween.stop();
 }
-/**
- * This eliminates the redundance of having to type property names for a planet object.
- * @param {type} myOrbitRate decimal
- * @param {type} myRotationRate decimal
- * @param {type} myDistanceFromAxis decimal
- * @param {type} myName string
- * @param {type} myTexture image file path
- * @param {type} mySize decimal
- * @param {type} mySegments integer
- * @returns {constructPlanetData.mainAnonym$0}
- */
+
+// this function fills in the data for a planet.
 function constructPlanetData(myOrbitRate, myRotationRate, myDistanceFromAxis, myName, myTexture, mySize, mySegments) {
     return {
         orbitRate: myOrbitRate
@@ -122,16 +113,7 @@ function constructPlanetData(myOrbitRate, myRotationRate, myDistanceFromAxis, my
     };
 }
 
-/**
- * create a visible ring and add it to the scene.
- * @param {type} size decimal
- * @param {type} innerDiameter decimal
- * @param {type} facets integer
- * @param {type} myColor HTML color
- * @param {type} name string
- * @param {type} distanceFromAxis decimal
- * @returns {THREE.Mesh|myRing}
- */
+// create a visible orbit ring and add it to the scene.
 function getRing(size, innerDiameter, facets, myColor, name, distanceFromAxis) {
     var ring1Geometry = new THREE.RingGeometry(size, innerDiameter, facets);
     var ring1Material = new THREE.MeshBasicMaterial({color: myColor, side: THREE.DoubleSide});
@@ -144,13 +126,7 @@ function getRing(size, innerDiameter, facets, myColor, name, distanceFromAxis) {
 }
 
 
-/**
- * Simplifies the creation of materials used for visible objects.
- * @param {type} type
- * @param {type} color
- * @param {type} myTexture
- * @returns {THREE.MeshStandardMaterial|THREE.MeshLambertMaterial|THREE.MeshPhongMaterial|THREE.MeshBasicMaterial}
- */
+// Simplifies the creation of materials used for visible objects.
 function getMaterial(type, color, myTexture) {
     var materialOptions = {
         color: color === undefined ? 'rgb(255, 255, 255)' : color,
@@ -171,11 +147,7 @@ function getMaterial(type, color, myTexture) {
     }
 }
 
-/**
- * Draws all of the orbits to be shown in the scene.
- * @param {type} planetsData array of data for planets
- * @returns {undefined}
- */
+// Draws all of the orbits to be shown in the scene.
 function createVisibleOrbits(planetsData) {
     var orbitWidth = 0.01;
     planetsData.forEach(function(p) {
@@ -188,13 +160,7 @@ function createVisibleOrbits(planetsData) {
     });
 }
 
-/**
- * Simplifies the creation of a sphere.
- * @param {type} material THREE.SOME_TYPE_OF_CONSTRUCTED_MATERIAL
- * @param {type} size decimal
- * @param {type} segments integer
- * @returns {getSphere.obj|THREE.Mesh}
- */
+// this function creates a sphere model.
 function getSphere(material, size, segments) {
     var geometry = new THREE.SphereGeometry(size, segments, segments);
     var obj = new THREE.Mesh(geometry, material);
@@ -203,15 +169,7 @@ function getSphere(material, size, segments) {
     return obj;
 }
 
-/**
- * Creates a planet and adds it to the scene.
- * @param {type} myData data for a planet object
- * @param {type} x integer
- * @param {type} y integer
- * @param {type} z integer
- * @param {type} myMaterialType string that is passed to getMaterial()
- * @returns {getSphere.obj|THREE.Mesh|loadTexturedPlanet.myPlanet}
- */
+// Creates a planet model and adds it to the scene.
 function loadTexturedPlanet(myData, x, y, z, text) {
     var myMaterial;
     var passThisTexture;
@@ -232,12 +190,7 @@ function loadTexturedPlanet(myData, x, y, z, text) {
     return myPlanet;
 }
 
-/**
- * A test function to load the text.
- * @param {type} object object to attach the text on
- * @param {type} text the text to be displayed
- * @returns {THREE.PointLight|getPointLight.light}
- */
+// A test function to load the text 
 function loadText(object, text, higher) {
     const Div = document.createElement( 'div' );
     Div.className = 'label';
@@ -269,12 +222,7 @@ function loadText(object, text, higher) {
     controls.maxDistance = 100;
 }
 
-/**
- * Simplifies creating a light that disperses in all directions.
- * @param {type} intensity decimal
- * @param {type} color HTML color
- * @returns {THREE.PointLight|getPointLight.light}
- */
+// creates a light that disperses in all directions.
 function getPointLight(intensity, color) {
     var light = new THREE.PointLight(color, intensity);
     light.castShadow = true;
@@ -285,14 +233,7 @@ function getPointLight(intensity, color) {
     return light;
 }
 
-/**
- * Move the planet around its orbit, and rotate it.
- * @param {type} myPlanet
- * @param {type} myData
- * @param {type} myTime
- * @param {type} stopRotation optional set to true for rings
- * @returns {undefined}
- */
+// Move the planet around its orbit, and rotate it.
 function movePlanet(myPlanet, myData, myTime, stopRotation) {
     if (orbitData.runRotation && !stopRotation) {
         myPlanet.rotation.y += myData.rotationRate;
@@ -306,9 +247,7 @@ function movePlanet(myPlanet, myData, myTime, stopRotation) {
                 * myData.distanceFromAxis;
     }
 }
-/**
- * A function for moving ufo according to the order in the json data
- */
+// A function for moving ufo according to the order in the json data
 function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
 
     var firstTween;
@@ -349,23 +288,14 @@ function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
 }
 
 
-/**
- * This function loads the model
- */
+// This function loads the model and return a promise
 function modelLoader(url) {
     return new Promise((resolve, reject) => {
         loader.load(url, data=> resolve(data));
     });
 }
 
-/**
- * This function is called in a loop to create animation.
- * @param {type} renderer
- * @param {type} scene
- * @param {type} camera
- * @param {type} controls
- * @returns {undefined}
- */
+// This function is called in a loop to create animation.
 function update(renderer, scene, camera, controls, loadedPlanets, arrayOfPlanetDatas) {
     pointLight.position.copy(sun.position);
     controls.update();
@@ -390,10 +320,8 @@ function update(renderer, scene, camera, controls, loadedPlanets, arrayOfPlanetD
     
 }
 
-/**
- * This is the function that starts everything.
- * @returns {THREE.Scene|scene}
- */
+// This is the function that starts everything.
+
 async function init() {
     // Create the camera that allows us to view into the scene.
     camera = new THREE.PerspectiveCamera(

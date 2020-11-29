@@ -40,6 +40,7 @@ public class JavacPlugin implements Plugin{
                             @Override
                             public Void visitClass(ClassTree classNode, Void aVoid)
                             {
+                                System.out.println("!!!" + classNode.getSimpleName().toString());
                                 return super.visitClass(classNode, aVoid);
                             }
 
@@ -60,17 +61,34 @@ public class JavacPlugin implements Plugin{
         Names names = Names.instance(context);
         factory.at(((JCTree) method).pos); // set factory at method's position in the tree
         com.sun.tools.javac.util.List newStatements = com.sun.tools.javac.util.List.nil();
+        JCTree.JCExpression json;
 
         if(method.getModifiers().getFlags().contains(Modifier.STATIC)){
-            System.out.println("!!!"+method.getModifiers().getFlags());
-
-            // do static version
-            // libs.SimpleTokenizer.class.hashCode()
-            // can get libs.Simple
-            // method.getName()  here in the AST maker should point to that?
+            //generateStaticInstrument(factory, names, method);
+            return;
+        } else {
+            //json = generateDynamicInstrument(factory, names);
             return;
         }
 
+       /* JCTree.JCMethodInvocation serr1 = factory.Apply(
+                com.sun.tools.javac.util.List.nil(),
+                getSerrMethod(factory, names),
+                com.sun.tools.javac.util.List.of(json)
+        );
+
+        newStatements = newStatements.append(factory.Exec(serr1));
+
+        JCTree.JCBlock body = (JCTree.JCBlock) method.getBody();
+
+        if(body != null){
+            body.stats = body.stats.prependList(newStatements);
+        } */
+    }
+
+
+    // Generate the Expression representing the JSON that needs to be logged for dynamic method calls
+    private JCTree.JCExpression generateDynamicInstrument(TreeMaker factory, Names names) {
         //String id = Integer.toString(identityHashCode(this)); // can't do identityHashCode
         // instead ... Integer.toString(this.hashCode())
         JCTree.JCFieldAccess this_hash = getMethod(factory, names, "this", "hashCode");
@@ -127,30 +145,84 @@ public class JavacPlugin implements Plugin{
                 com.sun.tools.javac.util.List.nil()
         );
 
+        return buildJson(factory, hash_str, class_name_str, obj_methodName);
+    }
 
+    // Generate the Expression representing the JSON that needs to be logged for static method calls
+    private void generateStaticInstrument(TreeMaker factory, Names names, MethodTree method) {
+        // libs.SimpleTokenizer.class.hashCode()
+        // can get libs.Simple
+        // method.getName()  here in the AST maker should point to that?
+
+        /*
+        JCTree.JCMethodInvocation hash = factory.Apply(
+                com.sun.tools.javac.util.List.nil(),
+                this_hash,
+                com.sun.tools.javac.util.List.nil()
+        );
+
+
+        JCTree.JCFieldAccess i_to_s = getMethod(factory, names, "Integer", "toString");
+
+        JCTree.JCMethodInvocation hash_str = factory.Apply(
+                com.sun.tools.javac.util.List.nil(),
+                i_to_s,
+                com.sun.tools.javac.util.List.of(hash)
+        );
+
+        // this.getClass().getName();
+        JCTree.JCFieldAccess this_class = getMethod(factory, names, "this", "getClass");
+        JCTree.JCMethodInvocation class_str = factory.Apply(
+                com.sun.tools.javac.util.List.nil(),
+                this_class,
+                com.sun.tools.javac.util.List.nil()
+        );
+        JCTree.JCFieldAccess this_class_getname = factory.Select(class_str, names.fromString("getName"));
+        JCTree.JCMethodInvocation class_name_str = factory.Apply(
+                com.sun.tools.javac.util.List.nil(),
+                this_class_getname,
+                com.sun.tools.javac.util.List.nil()
+        );
+
+        //String methodName = new Throwable().getStackTrace()[0].getMethodName();
+        JCTree.JCNewClass init_throwable = factory.NewClass(
+                null,
+                com.sun.tools.javac.util.List.nil(),
+                factory.Ident(names.fromString("Throwable")),
+                com.sun.tools.javac.util.List.nil(),
+                null
+        );
+
+        JCTree.JCFieldAccess meth_stacktrace = factory.Select(init_throwable, names.fromString("getStackTrace"));
+
+        JCTree.JCMethodInvocation obj_stacktrace = factory.Apply(
+                com.sun.tools.javac.util.List.nil(),
+                meth_stacktrace,
+                com.sun.tools.javac.util.List.nil()
+        );
+
+        JCTree.JCArrayAccess top = factory.Indexed(obj_stacktrace, factory.Literal(0));
+        JCTree.JCFieldAccess meth_getMethodName = factory.Select(top, names.fromString("getMethodName"));
+        JCTree.JCMethodInvocation obj_methodName = factory.Apply(
+                com.sun.tools.javac.util.List.nil(),
+                meth_getMethodName,
+                com.sun.tools.javac.util.List.nil()
+        );
+
+        return buildJson(factory, hash_str, factory.Literal(class_name), obj_methodName); */
+
+    }
+
+    private JCTree.JCExpression buildJson(TreeMaker factory, JCTree.JCMethodInvocation hash_str, JCTree.JCExpression class_name_str, JCTree.JCMethodInvocation obj_methodName) {
         // build up string expression using plus operator
         //"{\"id\": " + id + ", \"class\": \"" + className + "\", \"method\": " + methodName + "},"
-        JCTree.JCExpression json1 = factory.Binary(JCTree.Tag.PLUS,factory.Literal("{\"id\": "), hash_str);
+        JCTree.JCExpression json1 = factory.Binary(JCTree.Tag.PLUS, factory.Literal("{\"id\": "), hash_str);
         JCTree.JCExpression json2 = factory.Binary(JCTree.Tag.PLUS, json1, factory.Literal(", \"class\": \""));
         JCTree.JCExpression json3 = factory.Binary(JCTree.Tag.PLUS, json2, class_name_str);
         JCTree.JCExpression json4 = factory.Binary(JCTree.Tag.PLUS, json3, factory.Literal("\", \"method\": \""));
         JCTree.JCExpression json5 = factory.Binary(JCTree.Tag.PLUS, json4, obj_methodName);
         JCTree.JCExpression json6 = factory.Binary(JCTree.Tag.PLUS, json5, factory.Literal("\"},"));
-
-
-        JCTree.JCMethodInvocation serr1 = factory.Apply(
-                com.sun.tools.javac.util.List.nil(),
-                getSerrMethod(factory, names),
-                com.sun.tools.javac.util.List.of(json6)
-        );
-
-        newStatements = newStatements.append(factory.Exec(serr1));
-
-        JCTree.JCBlock body = (JCTree.JCBlock) method.getBody();
-
-        if(body != null){
-            body.stats = body.stats.prependList(newStatements);
-        }
+        return json6;
     }
 
     private JCTree.JCFieldAccess getSerrMethod(TreeMaker factory, Names names) {

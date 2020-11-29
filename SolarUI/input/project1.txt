@@ -1,0 +1,3937 @@
+[
+ {
+  "method": "<init>",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "tokenize",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "<init>",
+  "id": "1329552164",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getMovementsRegex",
+  "id": "1329552164",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "parseProgram",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "moreTokens",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "parseStatement",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "parseCreateImage",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "<init>",
+  "id": "159413332",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "moreTokens",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "parseStatement",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "parseCreateImage",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "<init>",
+  "id": "1028214719",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "moreTokens",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "parseStatement",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "parseCreateImage",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "<init>",
+  "id": "500977346",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "moreTokens",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "parseStatement",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "parseCreatePanel",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "parseCreateTextPanel",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "parseAddImages",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "parseAddSingleImage",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "<init>",
+  "id": "2094548358",
+  "class": "ast.AddImage"
+ },
+ {
+  "method": "<init>",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "parseMoveImages",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "parseMoveSingleImage",
+  "id": "664223387",
+  "class": "Parser"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getAndCheckNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "getNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "<init>",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkToken",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "checkNext",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "<init>",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "<init>",
+  "id": "214126413",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moreTokens",
+  "id": "1325547227",
+  "class": "Tokenizer"
+ },
+ {
+  "method": "<init>",
+  "id": "1706234378",
+  "class": "ast.GifComicProgram"
+ },
+ {
+  "method": "accept",
+  "id": "1706234378",
+  "class": "ast.GifComicProgram"
+ },
+ {
+  "method": "visit",
+  "id": "1342443276",
+  "class": "Validator"
+ },
+ {
+  "method": "getStatements",
+  "id": "1706234378",
+  "class": "ast.GifComicProgram"
+ },
+ {
+  "method": "accept",
+  "id": "159413332",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "visit",
+  "id": "1342443276",
+  "class": "Validator"
+ },
+ {
+  "method": "getName",
+  "id": "159413332",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "accept",
+  "id": "1028214719",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "visit",
+  "id": "1342443276",
+  "class": "Validator"
+ },
+ {
+  "method": "getName",
+  "id": "1028214719",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "accept",
+  "id": "500977346",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "visit",
+  "id": "1342443276",
+  "class": "Validator"
+ },
+ {
+  "method": "getName",
+  "id": "500977346",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "accept",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "visit",
+  "id": "1342443276",
+  "class": "Validator"
+ },
+ {
+  "method": "getDimensions",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "getX",
+  "id": "214126413",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getDimensions",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "getY",
+  "id": "214126413",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "getFontsize",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "outOfBounds",
+  "id": "1342443276",
+  "class": "Validator"
+ },
+ {
+  "method": "getBackground",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "getPanelSteps",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "accept",
+  "id": "2094548358",
+  "class": "ast.AddImage"
+ },
+ {
+  "method": "visit",
+  "id": "1342443276",
+  "class": "Validator"
+ },
+ {
+  "method": "getName",
+  "id": "2094548358",
+  "class": "ast.AddImage"
+ },
+ {
+  "method": "getPosition",
+  "id": "2094548358",
+  "class": "ast.AddImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "outOfBounds",
+  "id": "1342443276",
+  "class": "Validator"
+ },
+ {
+  "method": "accept",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "visit",
+  "id": "1342443276",
+  "class": "Validator"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "outOfBounds",
+  "id": "1342443276",
+  "class": "Validator"
+ },
+ {
+  "method": "getName",
+  "id": "1706234378",
+  "class": "ast.GifComicProgram"
+ },
+ {
+  "method": "<init>",
+  "id": "1199823423",
+  "class": "Evaluator"
+ },
+ {
+  "method": "<init>",
+  "id": "1848402763",
+  "class": "resources.ImageLibrary"
+ },
+ {
+  "method": "<init>",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "accept",
+  "id": "1706234378",
+  "class": "ast.GifComicProgram"
+ },
+ {
+  "method": "visit",
+  "id": "1199823423",
+  "class": "Evaluator"
+ },
+ {
+  "method": "getStatements",
+  "id": "1706234378",
+  "class": "ast.GifComicProgram"
+ },
+ {
+  "method": "accept",
+  "id": "159413332",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "visit",
+  "id": "1199823423",
+  "class": "Evaluator"
+ },
+ {
+  "method": "getSource",
+  "id": "159413332",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "getImage",
+  "id": "1848402763",
+  "class": "resources.ImageLibrary"
+ },
+ {
+  "method": "hasImage",
+  "id": "1848402763",
+  "class": "resources.ImageLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "159413332",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "accept",
+  "id": "1028214719",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "visit",
+  "id": "1199823423",
+  "class": "Evaluator"
+ },
+ {
+  "method": "getSource",
+  "id": "1028214719",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "getImage",
+  "id": "1848402763",
+  "class": "resources.ImageLibrary"
+ },
+ {
+  "method": "hasImage",
+  "id": "1848402763",
+  "class": "resources.ImageLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1028214719",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "accept",
+  "id": "500977346",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "visit",
+  "id": "1199823423",
+  "class": "Evaluator"
+ },
+ {
+  "method": "getSource",
+  "id": "500977346",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "getImage",
+  "id": "1848402763",
+  "class": "resources.ImageLibrary"
+ },
+ {
+  "method": "hasImage",
+  "id": "1848402763",
+  "class": "resources.ImageLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "500977346",
+  "class": "ast.CreateImage"
+ },
+ {
+  "method": "accept",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "visit",
+  "id": "1199823423",
+  "class": "Evaluator"
+ },
+ {
+  "method": "getDimensions",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "getBackground",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "getX",
+  "id": "214126413",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "214126413",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "getFontsize",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "<init>",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "<init>",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPanelSteps",
+  "id": "1198108795",
+  "class": "ast.CreatePanel"
+ },
+ {
+  "method": "setCurrentEval",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "accept",
+  "id": "2094548358",
+  "class": "ast.AddImage"
+ },
+ {
+  "method": "visit",
+  "id": "1199823423",
+  "class": "Evaluator"
+ },
+ {
+  "method": "getCurrentEval",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "addImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getName",
+  "id": "2094548358",
+  "class": "ast.AddImage"
+ },
+ {
+  "method": "getPosition",
+  "id": "2094548358",
+  "class": "ast.AddImage"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "setCurrentEval",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "setCurrentEval",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "accept",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "visit",
+  "id": "1199823423",
+  "class": "Evaluator"
+ },
+ {
+  "method": "getCurrentEval",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "generateMovement",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "762152757",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "762152757",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "762152757",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "232824863",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "232824863",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "232824863",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "519569038",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "519569038",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "519569038",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "1729199940",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "1729199940",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "1729199940",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "611437735",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "611437735",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "611437735",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "1769597131",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "1769597131",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "1769597131",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "1543727556",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "1543727556",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "1543727556",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "225493257",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "225493257",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "225493257",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "1348949648",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "1348949648",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "1348949648",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "1205044462",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "1205044462",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "1205044462",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "581374081",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "581374081",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "581374081",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "1654589030",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "1654589030",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "1654589030",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "33524623",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "33524623",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "33524623",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "205125520",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "205125520",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "205125520",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "717356484",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "717356484",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "717356484",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "475266352",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "475266352",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "475266352",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "1967205423",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "1967205423",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "1967205423",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "257895351",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "257895351",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "257895351",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "1690716179",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "1690716179",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "1690716179",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getMovement",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "jump",
+  "id": "933699219",
+  "class": "entities.MovementLibrary"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "455896770",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getY",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getPosition",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "getX",
+  "id": "511754216",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getName",
+  "id": "1880587981",
+  "class": "ast.MoveImage"
+ },
+ {
+  "method": "<init>",
+  "id": "1211888640",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "moveImage",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getBackground",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getImageLayers",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "1211888640",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getY",
+  "id": "1211888640",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFontSize",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getText",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getX",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "getTextPosition",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getY",
+  "id": "2096057945",
+  "class": "entities.Coordinate"
+ },
+ {
+  "method": "addFrame",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "setCurrentEval",
+  "id": "434176574",
+  "class": "entities.Panel"
+ },
+ {
+  "method": "getFrames",
+  "id": "434176574",
+  "class": "entities.Panel"
+ }
+]

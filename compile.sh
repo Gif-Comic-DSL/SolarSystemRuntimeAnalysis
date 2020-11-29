@@ -1,20 +1,41 @@
 #!/bin/sh
 
-PLUGIN=$1
-SOURCE=$2
-MAIN=$3
+PROJECT=$1 # path of the parent directory of the plugin
+SOURCE=$2 # path to source directory
+MAIN=$3 # path from soruce directory to main class
 
-mkdir -p pluginOut
-PLUGINOUT=${SOURCE%/*}/pluginOut
 
-javac -cp $PLUGIN:$SOURCE -Xplugin:MyPlugin -d $PLUGINOUT $MAIN
+mkdir -p /tmp/solarUI
+PLUGINOUT=/tmp/solarUI/
 
-OUT=$PLUGINOUT${MAIN//$SOURCE/}
-OUT=${OUT%.*}
+javac -cp $PROJECT/target/classes:$SOURCE -Xplugin:MyPlugin -d $PLUGINOUT $SOURCE/$MAIN
 
-java -cp $OUT 2> outJson.txt
-echo $OUT
+#OUT=$PLUGINOUT${MAIN//$SOURCE/}
+OUT=${MAIN%.*}
 
+java -cp $PLUGINOUT $OUT 2> /tmp/solarUI/outJson.txt
+
+egrep "^{" /tmp/solarUI/outJson.txt > /tmp/solarUI/newJson.txt
+FILE=/tmp/solarUI/outJson.txt
+OUTFILE=/tmp/solarUI/newJson.txt
+if grep -iq exception $FILE
+then
+	a=$(tail -1 $OUTFILE)
+	b=${a%:*}
+	c=': "exception"},'
+	d="${b}${c}"
+	echo $d >> $OUTFILE
+fi
+
+# trimming last, and add brackets
+sed -i '' '$ s/.$//' $OUTFILE
+sed -i '' '1 i\
+[
+' $OUTFILE
+echo ']' >> $OUTFILE
+rm $FILE
+
+live-server --open=$PROJECT/SolarUI
 
 
 

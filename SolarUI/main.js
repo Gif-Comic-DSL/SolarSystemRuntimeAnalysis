@@ -258,7 +258,7 @@ function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
     loadText(ufo, arrayOfClasses[0].method, higher);
     arrayOfClasses.forEach(function(object, index) {
         if(oldTween == null) {
-            firstTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 2000).onComplete(function () {
+            firstTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 1000).onComplete(function () {
                     loadText(ufo, arrayOfClasses[index+1].method, higher);
                     // Caught an exception
                     if(arrayOfClasses[index+1].method.toLowerCase().indexOf("exception") != -1) {
@@ -267,7 +267,7 @@ function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
             });
             oldTween = firstTween;
         } else {
-            newTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 2000).onComplete(function () {
+            newTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 2100).onComplete(function () {
                 if(index + 1 == arrayOfClasses.length) return;
                 loadText(ufo, arrayOfClasses[index+1].method, higher);
                 // Caught an exception
@@ -280,7 +280,7 @@ function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
         }
     });
 
-    var finalTween = new TWEEN.Tween(ufo.position).to(sun.position, 3000).onComplete(function () {
+    var finalTween = new TWEEN.Tween(ufo.position).to(sun.position, 1000).onComplete(function () {
         console.log("finished");
     });
     oldTween.chain(finalTween);

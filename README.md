@@ -18,7 +18,17 @@ Troubleshooting:
     - follow the copied path, select tools.jar and click open
     
 ## Running the plugin on a target project
-!!! RUN BASH SCRIPT !!! <br>
+We have written a bash script to automate the several steps required to run our dynamic analysis and visualization tool.
+A call to the script is of the form:
+`{PATH_TO_runSolarAnalysis.sh} {PATH_TO_THIS_PROJECT} {PATH_TO_TARGET_PROJECT} {SUBPATH_TO_TARGET_SRC} {SUBPATH_TO_MAIN}`
+
+The `PATH_TO_TARGET_PROJECT` in particular must be an absolute path, and we assume that this is the user dir the target 
+project is usually ran from, and contains any input files for the target program. 
+
+Example call to bash script:
+`Desktop/ubc2020/cpsc410/teamProject/cpsc410_project2_team2/runSolarAnalysis.sh /Users/alexanderackerman/Desktop/UBC2020/CPSC410/teamProject/cpsc410_project2_team2 /Users/alexanderackerman/Desktop/UBC2020/CPSC410/a2/tinyvars src ui/Main.java`
+
+
 BELOW INSTRUCTIONS ARE TO DO IT MANUALLY - VERY MESSY!   
 
 ## Compiling a target project using our plugin
@@ -28,12 +38,12 @@ On the command line, enter:
 
 We suggest you do this from inside the top level of your target project, so your paths will be: <br>
 PATH_TO_PLUGIN = `~/<path to our repo>/cpsc410_project2_team2/<path to JavacPlugin.class's parent directory>` <br>
-PATH_TO_TARGET_PROJECT = `./src` <br>
+PATH_TO_TARGET_PROJECT = `src` <br>
 OUTPUT_DIR = `modified_out` to create a new directory to house the modified compiled classes <br>
 PATH_TO_MAIN = `./src/<path to main>` <br>
 
 For example (using a tinyVars variation as the target project): <br>
-`javac -cp ~/Desktop/UBC2020/CPSC410/teamProject/cpsc410_project2_team2/target/classes:./src -Xplugin:MyPlugin -d modified_out src/ui/Main.java`
+`javac -cp ~/Desktop/UBC2020/CPSC410/teamProject/cpsc410_project2_team2/target/classes:src -Xplugin:MyPlugin -d modified_out src/ui/Main.java`
 
 Definitely a tricky thing that once you add the `-cp` option `javac` stops looking in the current directory for classes!
 

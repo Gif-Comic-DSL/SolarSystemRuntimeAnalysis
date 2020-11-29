@@ -1,19 +1,20 @@
 #!/bin/sh
 
 PROJECT=$1 # path of the parent directory of the plugin
-SOURCE=$2 # path to source directory
-MAIN=$3 # path from soruce directory to main class
+TARGET=$2 # path to target project
+SOURCE=$3 # path to src within target proj
+MAIN=$4 # path to main file within source directory
 
 
 mkdir -p /tmp/solarUI
-PLUGINOUT=/tmp/solarUI/
+PLUGINOUT=/tmp/solarUI
 
-javac -cp $PROJECT/target/classes:$SOURCE -Xplugin:MyPlugin -d $PLUGINOUT $SOURCE/$MAIN
+javac -cp $PROJECT/target/classes:$TARGET/$SOURCE -Xplugin:MyPlugin -d $PLUGINOUT $TARGET/$SOURCE/$MAIN
 
 #OUT=$PLUGINOUT${MAIN//$SOURCE/}
 OUT=${MAIN%.*}
 
-java -cp $PLUGINOUT $OUT 2> /tmp/solarUI/outJson.txt
+java -Duser.dir=$TARGET -cp $PLUGINOUT $OUT 2> /tmp/solarUI/outJson.txt
 
 egrep "^{" /tmp/solarUI/outJson.txt > /tmp/solarUI/newJson.txt
 FILE=/tmp/solarUI/outJson.txt
@@ -33,9 +34,6 @@ sed -i '' '1 i\
 [
 ' $OUTFILE
 echo ']' >> $OUTFILE
-rm $FILE
 
-live-server --open=$PROJECT/SolarUI
-
-
-
+mv $OUTFILE $PROJECT/SolarUI/input/project1.txt
+live-server $PROJECT/SolarUI

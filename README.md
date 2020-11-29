@@ -1,14 +1,7 @@
 # Using the plugin 
-DISCLAIMER: these commands are for Mac users! They are slightly different on Windows (we'll update this with Windows commands soon)
+DISCLAIMER: these commands are for Mac users! Windows users be ware!
 
-## Building/Compiling the plugin
-
-This plugin isn't an application that can be run on its own; it's a tool used to modify the source code of other Java projects.
-Therefore, it doesn't need a Main file/method, and we shouldn't be clicking the green triangle that `runs` the project. 
-However, to the left of the Add Configuration menu, there's a little hammer which `builds` the project, and that button works perfectly ;)
-Simply click the hammer to build the plugin and check to make sure the build was successful.
-
-Troubleshooting:
+## Developer Setup
 1. Make sure the language is set to Java 8 with SDK version 1.8 
     - in IntelliJ, this is configured under File > Project Structure > Project
 2. Ensure tools.jar is added as an external library
@@ -16,6 +9,18 @@ Troubleshooting:
     - expand <1.8> under External Libraries, right click tools.jar and select copy > copy path...
     - open File > Project Structure > Modules > Dependencies, click the + icon in the bottom left corner and click "JARs or directories"
     - follow the copied path, select tools.jar and click open
+    
+## Runtime Dependenices
+1. The front end can be run with a js dev server like `live-server`. You can install `live-server` from `npm`:
+    `npm install -g live-server`
+    If you don't have  `npm` setup, you can install it with `brew install npm`.
+    
+## Building/Compiling the plugin
+
+This plugin isn't an application that can be run on its own; it's a tool used to modify the source code of other Java projects.
+Therefore, it doesn't need a Main file/method, and we shouldn't be clicking the green triangle that `runs` the project. 
+However, to the left of the Add Configuration menu, there's a little hammer which `builds` the project, and that button works perfectly ;)
+Simply click the hammer to build the plugin and check to make sure the build was successful.
     
 ## Running the plugin on a target project
 We have written a bash script to automate the several steps required to run our dynamic analysis and visualization tool.

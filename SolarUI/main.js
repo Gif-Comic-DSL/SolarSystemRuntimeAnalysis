@@ -99,17 +99,8 @@ function explode(tween) {
     scene.add( mesh );
     tween.stop();
 }
-/**
- * This eliminates the redundance of having to type property names for a planet object.
- * @param {type} myOrbitRate decimal
- * @param {type} myRotationRate decimal
- * @param {type} myDistanceFromAxis decimal
- * @param {type} myName string
- * @param {type} myTexture image file path
- * @param {type} mySize decimal
- * @param {type} mySegments integer
- * @returns {constructPlanetData.mainAnonym$0}
- */
+
+// this function fills in the data for a planet.
 function constructPlanetData(myOrbitRate, myRotationRate, myDistanceFromAxis, myName, myTexture, mySize, mySegments) {
     return {
         orbitRate: myOrbitRate
@@ -122,16 +113,7 @@ function constructPlanetData(myOrbitRate, myRotationRate, myDistanceFromAxis, my
     };
 }
 
-/**
- * create a visible ring and add it to the scene.
- * @param {type} size decimal
- * @param {type} innerDiameter decimal
- * @param {type} facets integer
- * @param {type} myColor HTML color
- * @param {type} name string
- * @param {type} distanceFromAxis decimal
- * @returns {THREE.Mesh|myRing}
- */
+// create a visible orbit ring and add it to the scene.
 function getRing(size, innerDiameter, facets, myColor, name, distanceFromAxis) {
     var ring1Geometry = new THREE.RingGeometry(size, innerDiameter, facets);
     var ring1Material = new THREE.MeshBasicMaterial({color: myColor, side: THREE.DoubleSide});
@@ -144,13 +126,7 @@ function getRing(size, innerDiameter, facets, myColor, name, distanceFromAxis) {
 }
 
 
-/**
- * Simplifies the creation of materials used for visible objects.
- * @param {type} type
- * @param {type} color
- * @param {type} myTexture
- * @returns {THREE.MeshStandardMaterial|THREE.MeshLambertMaterial|THREE.MeshPhongMaterial|THREE.MeshBasicMaterial}
- */
+// Simplifies the creation of materials used for visible objects.
 function getMaterial(type, color, myTexture) {
     var materialOptions = {
         color: color === undefined ? 'rgb(255, 255, 255)' : color,
@@ -171,11 +147,7 @@ function getMaterial(type, color, myTexture) {
     }
 }
 
-/**
- * Draws all of the orbits to be shown in the scene.
- * @param {type} planetsData array of data for planets
- * @returns {undefined}
- */
+// Draws all of the orbits to be shown in the scene.
 function createVisibleOrbits(planetsData) {
     var orbitWidth = 0.01;
     planetsData.forEach(function(p) {
@@ -188,13 +160,7 @@ function createVisibleOrbits(planetsData) {
     });
 }
 
-/**
- * Simplifies the creation of a sphere.
- * @param {type} material THREE.SOME_TYPE_OF_CONSTRUCTED_MATERIAL
- * @param {type} size decimal
- * @param {type} segments integer
- * @returns {getSphere.obj|THREE.Mesh}
- */
+// this function creates a sphere model.
 function getSphere(material, size, segments) {
     var geometry = new THREE.SphereGeometry(size, segments, segments);
     var obj = new THREE.Mesh(geometry, material);
@@ -203,15 +169,7 @@ function getSphere(material, size, segments) {
     return obj;
 }
 
-/**
- * Creates a planet and adds it to the scene.
- * @param {type} myData data for a planet object
- * @param {type} x integer
- * @param {type} y integer
- * @param {type} z integer
- * @param {type} myMaterialType string that is passed to getMaterial()
- * @returns {getSphere.obj|THREE.Mesh|loadTexturedPlanet.myPlanet}
- */
+// Creates a planet model and adds it to the scene.
 function loadTexturedPlanet(myData, x, y, z, text) {
     var myMaterial;
     var passThisTexture;
@@ -232,21 +190,19 @@ function loadTexturedPlanet(myData, x, y, z, text) {
     return myPlanet;
 }
 
-/**
- * A test function to load the text.
- * @param {type} object object to attach the text on
- * @param {type} text the text to be displayed
- * @returns {THREE.PointLight|getPointLight.light}
- */
-function loadText(object, text) {
+// A test function to load the text 
+function loadText(object, text, higher) {
     const Div = document.createElement( 'div' );
     Div.className = 'label';
     Div.textContent = text;
     Div.style.color = "white";
     Div.style.marginTop = '-1em';
     const Label = new CSS2DObject( Div );
-    Label.position.set( 0, 1, 0 );
-    
+    if(higher){
+        Label.position.set( 0, 3, 0 );
+    } else {
+        Label.position.set( 0, 1, 0 );
+    }    
     // remove the previous labels to avoid overlapping
     for(var i = 0; i < object.children.length; i++) {
         if(object.children[i] instanceof CSS2DObject) {
@@ -266,12 +222,7 @@ function loadText(object, text) {
     controls.maxDistance = 100;
 }
 
-/**
- * Simplifies creating a light that disperses in all directions.
- * @param {type} intensity decimal
- * @param {type} color HTML color
- * @returns {THREE.PointLight|getPointLight.light}
- */
+// creates a light that disperses in all directions.
 function getPointLight(intensity, color) {
     var light = new THREE.PointLight(color, intensity);
     light.castShadow = true;
@@ -282,14 +233,7 @@ function getPointLight(intensity, color) {
     return light;
 }
 
-/**
- * Move the planet around its orbit, and rotate it.
- * @param {type} myPlanet
- * @param {type} myData
- * @param {type} myTime
- * @param {type} stopRotation optional set to true for rings
- * @returns {undefined}
- */
+// Move the planet around its orbit, and rotate it.
 function movePlanet(myPlanet, myData, myTime, stopRotation) {
     if (orbitData.runRotation && !stopRotation) {
         myPlanet.rotation.y += myData.rotationRate;
@@ -303,21 +247,19 @@ function movePlanet(myPlanet, myData, myTime, stopRotation) {
                 * myData.distanceFromAxis;
     }
 }
-/**
- * A function for moving ufo according to the order in the json data
- */
+// A function for moving ufo according to the order in the json data
 function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
 
     var firstTween;
     var newTween;
     var oldTween;
-
+    var higher = true;
     
-    loadText(ufo, arrayOfClasses[0].method);
+    loadText(ufo, arrayOfClasses[0].method, higher);
     arrayOfClasses.forEach(function(object, index) {
         if(oldTween == null) {
-            firstTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 3000).onComplete(function () {
-                    loadText(ufo, arrayOfClasses[index+1].method);
+            firstTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 2000).onComplete(function () {
+                    loadText(ufo, arrayOfClasses[index+1].method, higher);
                     // Caught an exception
                     if(arrayOfClasses[index+1].method.toLowerCase().indexOf("exception") != -1) {
                         explode(firstTween);
@@ -325,9 +267,9 @@ function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
             });
             oldTween = firstTween;
         } else {
-            newTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 3000).onComplete(function () {
+            newTween = new TWEEN.Tween(ufo.position).to(getCurrentPosition(object, loadedPlanets), 2000).onComplete(function () {
                 if(index + 1 == arrayOfClasses.length) return;
-                loadText(ufo, arrayOfClasses[index+1].method);
+                loadText(ufo, arrayOfClasses[index+1].method, higher);
                 // Caught an exception
                 if(arrayOfClasses[index+1].method.toLowerCase().indexOf("exception") != -1) {
                     explode(firstTween);
@@ -346,23 +288,14 @@ function moveUFO(ufo, arrayOfClasses, loadedPlanets) {
 }
 
 
-/**
- * This function loads the model
- */
+// This function loads the model and return a promise
 function modelLoader(url) {
     return new Promise((resolve, reject) => {
         loader.load(url, data=> resolve(data));
     });
 }
 
-/**
- * This function is called in a loop to create animation.
- * @param {type} renderer
- * @param {type} scene
- * @param {type} camera
- * @param {type} controls
- * @returns {undefined}
- */
+// This function is called in a loop to create animation.
 function update(renderer, scene, camera, controls, loadedPlanets, arrayOfPlanetDatas) {
     pointLight.position.copy(sun.position);
     controls.update();
@@ -387,10 +320,8 @@ function update(renderer, scene, camera, controls, loadedPlanets, arrayOfPlanetD
     
 }
 
-/**
- * This is the function that starts everything.
- * @returns {THREE.Scene|scene}
- */
+// This is the function that starts everything.
+
 async function init() {
     // Create the camera that allows us to view into the scene.
     camera = new THREE.PerspectiveCamera(
@@ -442,7 +373,9 @@ async function init() {
 
     // Read in the JSON data;
     var arrayOfClasses;
-    await fetch("./input/input.json").then(response => response.json().then(data => arrayOfClasses = data));
+    await fetch("./input/project1.txt").then(response => response.json().then(data => arrayOfClasses = data));
+
+    // await fetch("./input/project1.json").then(response => response.json().then(data => arrayOfClasses = data));
 
     // Create the sun.
     var sunMaterial = getMaterial("basic", "rgb(255, 255, 255)");
@@ -468,7 +401,7 @@ async function init() {
     var rotationRate = 0.015;
     var distanceFromAxis = 25;
     var textureKey = 1;
-    var size = 1;
+    var size = 1.5;
 
     // Construct the planet data for each of object
     arrayOfClasses.forEach(function(object) {
@@ -479,7 +412,7 @@ async function init() {
             orbitRate += 10;
             rotationRate += 0.001;
             distanceFromAxis += 5;
-            if(textureKey > 9) {
+            if(textureKey >= 9) {
                 textureKey = 1;
             } else {
                 textureKey += 1;

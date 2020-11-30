@@ -1,5 +1,5 @@
 # Using the plugin 
-DISCLAIMER: these commands are for Mac users! They are slightly different on Windows (we'll update this with Windows commands soon)
+DISCLAIMER: these commands are for Mac users! Windows users beware!
 
 ## Building/Compiling the plugin
 

@@ -1,0 +1,14 @@
+Reflection on effectiveness of analysis/visualization:
+Overall, our user studies showed that our visualization was interesting and engaging to show the control flow of any given Java program.
+While users found it confusing to hook up all the back end pieces and pass the logs to the front end on the command line, we implemented a bash script to automate this process given some file paths from the user.
+With this script, running the whole analysis and visualization became user friendly and our users were much happier!
+They commented that they particularly liked the explosion that occurs when an exception is thrown.
+
+Reflection/evaluation of project:
+This project went very well, both in terms of the final result and the inner workings of the team.
+     - We bounced ideas off of each other in a friendly way and were able to come to a consensus on the best way forward
+     - We were able to shift responsibilities to accommodate external responsibilities (families, other course assignments/midterms, job interviews...) while keeping the division of work fairly even among the five of us
+     - We took feedback from each other and from outside users without offense and did not have any internal conflicts
+     - We tried many different approaches to our dynamic analysis and worked together to settle on one that we were able to fully implement
+     - We're proud of our final project!!
+

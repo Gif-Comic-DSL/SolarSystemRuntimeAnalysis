@@ -1,5 +1,5 @@
 # Using the plugin 
-DISCLAIMER: these commands are for Mac users! Windows users be ware!
+DISCLAIMER: these commands are for Mac users! Windows users beware!
 
 ## Developer Setup
 1. Make sure the language is set to Java 8 with SDK version 1.8 
@@ -34,7 +34,7 @@ Example call to bash script:
 `Desktop/ubc2020/cpsc410/teamProject/cpsc410_project2_team2/runSolarAnalysis.sh /Users/alexanderackerman/Desktop/UBC2020/CPSC410/teamProject/cpsc410_project2_team2 /Users/alexanderackerman/Desktop/UBC2020/CPSC410/a2/tinyvars src ui/Main.java`
 
 
-BELOW INSTRUCTIONS ARE TO DO IT MANUALLY - VERY MESSY!   
+## BELOW INSTRUCTIONS ARE TO RUN MANUALLY - THIS IS VERY MESSY!   
 
 ## Compiling a target project using our plugin
 
@@ -60,3 +60,28 @@ LOGFILE_PATH = the location at which to store the generated logs
 
 For example:
 `java -cp ./modified_out ui.Main 2> tmp/pluginLogs.txt`
+
+## Passing the logs to the front end with proper formatting:
+Run the following: <br>
+`egrep "^{" /tmp/solarUI/outJson.txt > /tmp/solarUI/newJson.txt` <br>
+`if grep -iq exception /tmp/solarUI/outJson.txt` <br>
+`then` <br>
+`	a=$(tail -1 /tmp/solarUI/newJson.txt)` <br>
+`	b=${a%:*}` <br>
+`	c=': "exception"},'` <br>
+`	d="${b}${c}"` <br>
+`	echo $d >> /tmp/solarUI/newJson.txt` <br>
+`fi` <br>
+`sed -i '' '$ s/.$//' /tmp/solarUI/newJson.txt` <br>
+`sed -i '' '1 i\` <br>
+`[` <br>
+`' /tmp/solarUI/newJson.txt` <br>
+`echo ']' >> /tmp/solarUI/newJson.txt` <br>
+`mv /tmp/solarUI/newJson.txt PATH_TO_PLUGIN/SolarUI/input/project1.txt` <br>
+
+## Running the front end (requires live-server):
+** Make sure to have live-server installed before hand <br>
+`npm install -g live-server` <br>
+or if you have permission issues: `sudo npm install -g live-server` and enter your admin password 
+
+Then run `live-server PATH_TO_PLUGIN/SolarUI`

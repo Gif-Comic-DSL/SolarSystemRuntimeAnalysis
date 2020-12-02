@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Spaceship travel</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div id="webgl"></div>
-        <script src="js/dat.gui.min.js"></script>
-        <script src="js/three.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
-        <script src="js/OrbitControls.js"></script>
-        <script src="js/modifiers/ExplodeModifier.js"></script>
-        <script type="module" src="main.js"></script>
-        <script type="x-shader/x-vertex" id="vertexshader">
+<head>
+    <title>Spaceship travel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="webgl"></div>
+<script src="js/dat.gui.min.js"></script>
+<script src="js/three.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+<script src="js/OrbitControls.js"></script>
+<script src="js/modifiers/ExplodeModifier.js"></script>
+<script type="module" src="main.js"></script>
+<script type="x-shader/x-vertex" id="vertexshader">
 
             uniform float time;
           
@@ -43,8 +43,9 @@
           
             }
           
-          </script>
-          <script type="x-shader/x-fragment" id="fragmentshader">
+
+</script>
+<script type="x-shader/x-fragment" id="fragmentshader">
           
           varying vec3 vNormal;
           varying vec3 vColor;
@@ -62,6 +63,7 @@
             gl_FragColor.xyz = sqrt( gl_FragColor.xyz );
           
           }
-          </script>
-    </body>
+
+</script>
+</body>
 </html>

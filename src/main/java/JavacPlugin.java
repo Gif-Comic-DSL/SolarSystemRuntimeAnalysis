@@ -11,7 +11,7 @@ import com.sun.tools.javac.util.Names;
 
 import javax.lang.model.element.Modifier;
 
-public class JavacPlugin implements Plugin{
+public class JavacPlugin implements Plugin {
 
     public String getName() {
         return "MyPlugin";
@@ -22,30 +22,24 @@ public class JavacPlugin implements Plugin{
         Context context = ((BasicJavacTask) javacTask).getContext();
         Log.instance(context)
                 .printRawLines(Log.WriterKind.NOTICE, "Hello from " + getName());
-        javacTask.addTaskListener(new TaskListener()
-        {
-            public void started(TaskEvent e)
-            {
+        javacTask.addTaskListener(new TaskListener() {
+            public void started(TaskEvent e) {
                 System.out.println(e);
             }
 
-            public void finished(TaskEvent e)
-            {
-                if (e.getKind() != TaskEvent.Kind.PARSE)
-                {
+            public void finished(TaskEvent e) {
+                if (e.getKind() != TaskEvent.Kind.PARSE) {
                     return;
                 }
                 e.getCompilationUnit().accept(
                         new TreeScanner<Void, Void>() {
                             @Override
-                            public Void visitClass(ClassTree classNode, Void aVoid)
-                            {
+                            public Void visitClass(ClassTree classNode, Void aVoid) {
                                 return super.visitClass(classNode, aVoid);
                             }
 
                             @Override
-                            public Void visitMethod(MethodTree methodNode, Void aVoid)
-                            {
+                            public Void visitMethod(MethodTree methodNode, Void aVoid) {
                                 addLog(methodNode, context);
                                 return super.visitMethod(methodNode, aVoid);
                             }
@@ -61,8 +55,8 @@ public class JavacPlugin implements Plugin{
         factory.at(((JCTree) method).pos); // set factory at method's position in the tree
         com.sun.tools.javac.util.List newStatements = com.sun.tools.javac.util.List.nil();
 
-        if(method.getModifiers().getFlags().contains(Modifier.STATIC)){
-            System.out.println("!!!"+method.getModifiers().getFlags());
+        if (method.getModifiers().getFlags().contains(Modifier.STATIC)) {
+            System.out.println("!!!" + method.getModifiers().getFlags());
 
             // do static version
             // libs.SimpleTokenizer.class.hashCode()
@@ -130,7 +124,7 @@ public class JavacPlugin implements Plugin{
 
         // build up string expression using plus operator
         //"{\"id\": " + id + ", \"class\": \"" + className + "\", \"method\": " + methodName + "},"
-        JCTree.JCExpression json1 = factory.Binary(JCTree.Tag.PLUS,factory.Literal("{\"id\": "), hash_str);
+        JCTree.JCExpression json1 = factory.Binary(JCTree.Tag.PLUS, factory.Literal("{\"id\": "), hash_str);
         JCTree.JCExpression json2 = factory.Binary(JCTree.Tag.PLUS, json1, factory.Literal(", \"class\": \""));
         JCTree.JCExpression json3 = factory.Binary(JCTree.Tag.PLUS, json2, class_name_str);
         JCTree.JCExpression json4 = factory.Binary(JCTree.Tag.PLUS, json3, factory.Literal("\", \"method\": \""));
@@ -148,7 +142,7 @@ public class JavacPlugin implements Plugin{
 
         JCTree.JCBlock body = (JCTree.JCBlock) method.getBody();
 
-        if(body != null){
+        if (body != null) {
             body.stats = body.stats.prependList(newStatements);
         }
     }

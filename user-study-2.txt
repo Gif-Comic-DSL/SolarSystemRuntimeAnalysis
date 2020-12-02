@@ -7,4 +7,3 @@ Changes implemented:
 - wrote bash script to perform back end calls (takes paths as user input). This allows the user to run the analysis and produce the visualization easily
 - moved the UFO labels upwards so they sit on top of planet labels
 - sped up the space ship flight slightly so the labels are still readable but the flight doesn't take so long
-
